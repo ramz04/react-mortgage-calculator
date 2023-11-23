@@ -36,7 +36,7 @@ export default function Result({ data }) {
   return (
     <Stack gap={3}>
       <Typography textAlign="center" variant="h5">
-        Monthly Payment: ${monthlyPayment.toFixed(2)}
+        Monthly Payment: ₵{monthlyPayment.toFixed(2)}
       </Typography>
       <Stack direction="row" justifyContent="center">
         <div>

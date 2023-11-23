@@ -19,7 +19,7 @@ const SliderSelect = ({ data, setData }) => {
         min={1000}
         max={bank_limit}
         steps={100}
-        unit="$"
+        unit="₵"
         amount={data.homeValue}
         label="Home Value"
         value={data.homeValue}
@@ -36,7 +36,7 @@ const SliderSelect = ({ data, setData }) => {
         min={0}
         max={data.homeValue}
         steps={100}
-        unit="$"
+        unit="₵"
         amount={data.downPayment}
         label="Down Payment"
         value={data.downPayment}
@@ -54,7 +54,7 @@ const SliderSelect = ({ data, setData }) => {
         min={0}
         max={data.homeValue}
         steps={100}
-        unit="$"
+        unit="₵"
         amount={data.loanAmount}
         label="Loan Amount"
         value={data.loanAmount}
