@@ -8,6 +8,7 @@ import { Stack } from "@mui/system"
 import Switch from "@mui/material/Switch"
 import { FormControlLabel, FormGroup } from "@mui/material"
 import { styled } from "@mui/material/styles"
+import { Link } from "react-router-dom"
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -61,7 +62,14 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar>
-          <Typography variant="h5">Bank of React</Typography>
+          <Link className="home--link" to={"/"}>
+            <Typography variant="h5">Bank of React</Typography>
+          </Link>
+          <Link className="apply--link" to={"apply"}>
+            <Stack>
+              <Typography variant="h6">Apply</Typography>
+            </Stack>
+          </Link>
           <Stack justifySelf="flex-end" sx={{ marginLeft: "auto" }}>
             <FormGroup>
               <Stack direction="row" alignItems="center" spacing={1}>
