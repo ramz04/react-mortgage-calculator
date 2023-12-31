@@ -36,7 +36,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             name="firstName"
             value={formData.firstName}
             onChange={handleChange}
-            required
           />
         </Grid>
         <Grid item xs={5}>
@@ -47,7 +46,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             name="Surname"
             value={formData.lastName}
             onChange={handleChange}
-            required
           />
         </Grid>
         <Grid item xs={6}>
@@ -60,7 +58,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             name="dateOfBirth"
             value={formData.dateOfBirth}
             onChange={handleChange}
-            required
           />
         </Grid>
         <Grid item xs={6}>
@@ -131,7 +128,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                   fullWidth
                   name="idNumber"
                   onChange={handleChange}
-                  required
                 />
               </Grid>
             </Grid>
@@ -150,7 +146,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 fullWidth
                 name="teleHome"
                 onChange={handleChange}
-                required
               />
             </Grid>
             <Grid item xs={4}>
@@ -160,7 +155,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 fullWidth
                 name="teleWork"
                 onChange={handleChange}
-                required
               />
             </Grid>
             <Grid item xs={4}>
@@ -170,7 +164,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 fullWidth
                 name="mobilePhone"
                 onChange={handleChange}
-                required
               />
             </Grid>
           </Grid>
@@ -195,7 +188,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             name="addressLine1"
             value={formData.addressLine1}
             onChange={handleChange}
-            required
           />
         </Grid>
         <Grid item xs={6}>
@@ -233,7 +225,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             fullWidth
             name="city"
             onChange={handleChange}
-            required
           />
         </Grid>
         <Grid item xs={6}>
@@ -244,7 +235,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             InputLabelProps={{ shrink: true }}
             fullWidth
             onChange={handleChange}
-            required
           />
         </Grid>
         <Grid item xs={12}>
@@ -300,7 +290,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                   fullWidth
                   name="pleaseSpecify"
                   onChange={handleChange}
-                  required
                 />
               </Grid>
             </Grid>
@@ -312,7 +301,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             variant="standard"
             fullWidth
             onChange={handleChange}
-            required
           />
         </Grid>
         <Grid item xs={6}>
@@ -321,7 +309,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             variant="standard"
             fullWidth
             onChange={handleChange}
-            required
           />
         </Grid>
         <Grid item xs={6}>
@@ -332,7 +319,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             InputLabelProps={{ shrink: true }}
             fullWidth
             onChange={handleChange}
-            required
           />
         </Grid>
       </Grid>
@@ -428,7 +414,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 fullWidth
                 name="Spouse"
                 onChange={handleChange}
-                required
               />
             </Grid>
             <Grid item xs={3}>
@@ -439,7 +424,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 fullWidth
                 name="Children"
                 onChange={handleChange}
-                required
               />
             </Grid>
             <Grid item xs={3}>
@@ -450,7 +434,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 fullWidth
                 name="Other"
                 onChange={handleChange}
-                required
               />
             </Grid>
           </Grid>
@@ -467,7 +450,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 fullWidth
                 name="title"
                 onChange={handleChange}
-                required
               />
             </Grid>
             <Grid item xs={4}>
@@ -477,7 +459,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 fullWidth
                 name="FirstName"
                 onChange={handleChange}
-                required
               />
             </Grid>
             <Grid item xs={4}>
@@ -487,7 +468,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 fullWidth
                 name="Surname"
                 onChange={handleChange}
-                required
               />
             </Grid>
             <Grid item xs={12}>
@@ -497,7 +477,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 fullWidth
                 name="mobile number"
                 onChange={handleChange}
-                required
               />
             </Grid>
           </Grid>
@@ -521,7 +500,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             fullWidth
             name="title"
             onChange={handleChange}
-            required
           />
         </Grid>
         <Grid item xs={4}>
@@ -531,7 +509,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             fullWidth
             name="FirstName"
             onChange={handleChange}
-            required
           />
         </Grid>
         <Grid item xs={4}>
@@ -541,7 +518,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             fullWidth
             name="Surname"
             onChange={handleChange}
-            required
           />
         </Grid>
         <Grid item xs={3}>
@@ -551,7 +527,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             fullWidth
             name="Relationship"
             onChange={handleChange}
-            required
           />
         </Grid>
         <Grid item xs={4}>
@@ -561,7 +536,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             fullWidth
             name="Mobile number"
             onChange={handleChange}
-            required
           />
         </Grid>
         <Grid item xs={4}>
@@ -573,7 +547,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             type="date"
             name="Date of birth"
             onChange={handleChange}
-            required
           />
         </Grid>
         <Grid item xs={12}>
@@ -589,7 +562,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 name="addressLine1"
                 value={formData.addressLine1}
                 onChange={handleChange}
-                required
               />
             </Grid>
             <Grid item xs={4}>
@@ -627,7 +599,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 fullWidth
                 name="city"
                 onChange={handleChange}
-                required
               />
             </Grid>
             <Grid item xs={4}>
@@ -638,7 +609,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 InputLabelProps={{ shrink: true }}
                 fullWidth
                 onChange={handleChange}
-                required
               />
             </Grid>
           </Grid>

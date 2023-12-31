@@ -74,7 +74,6 @@ const Apply = () => {
       ...prevData,
       [name]: value,
     }))
-    goForwards()
   }
 
   const handleMaritalStatusChange = (e) => {
@@ -88,6 +87,7 @@ const Apply = () => {
     e.preventDefault()
     // Add logic to submit the form data (e.g., send to server)
     console.log("Form data submitted:", formData)
+    goForwards()
   }
 
   return (
@@ -98,7 +98,7 @@ const Apply = () => {
           <Typography variant="h2">Apply for a loan</Typography>
         </Stack>
 
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" style={{ marginBlock: "10px" }}>
           <MyPaper>
             <form onSubmit={handleSubmit}>
               {currentIndex === 0 && (
@@ -130,7 +130,7 @@ const Apply = () => {
                     display: "flex",
                     alignItems: "flex-end",
                     justifyContent: "start",
-                    p: 4,
+                    pt: 4,
                   }}
                 >
                   {!isFirstStep && (
@@ -149,7 +149,7 @@ const Apply = () => {
                     display: "flex",
                     alignItems: "flex-end",
                     justifyContent: "end",
-                    p: 4,
+                    pt: 4,
                   }}
                 >
                   <Button
