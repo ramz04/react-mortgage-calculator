@@ -16,6 +16,7 @@ import {
 } from "@mui/material"
 import Page1 from "./Components/Form/Page1"
 import Page2 from "./Components/Form/Page2"
+import Page3 from "./Components/Form/Page3"
 
 const MyPaper = styled(Paper)({
   marginTop: (theme) => theme.spacing(3),
@@ -110,6 +111,13 @@ const Apply = () => {
               )}
               {currentIndex === 1 && (
                 <Page2
+                  formData={formData}
+                  handleMaritalStatusChange={handleMaritalStatusChange}
+                  handleChange={handleChange}
+                />
+              )}
+              {currentIndex === 2 && (
+                <Page3
                   formData={formData}
                   handleMaritalStatusChange={handleMaritalStatusChange}
                   handleChange={handleChange}
