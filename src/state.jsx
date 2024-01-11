@@ -4,7 +4,7 @@ const useFormStore = create((set) => ({
   personalInformation: {
     title: "",
     firstName: "",
-    surname: "",
+    surName: "",
     dateOfBirth: "",
     gender: "",
     identificationType: "",

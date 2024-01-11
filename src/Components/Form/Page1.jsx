@@ -11,7 +11,17 @@ import {
   FormLabel,
 } from "@mui/material"
 
-function Page1({ formData, handleChange }) {
+function Page1({
+  formData,
+  personalInformation,
+  currentResidentialAddress,
+  MaritalStatus,
+  Referee1,
+  handleChangePersonalInformation,
+  handleChangeResidentialAddress,
+  handleChangeMaritalStatus,
+  handleChangeReferee1,
+}) {
   return (
     <div>
       {/* Personal Information */}
@@ -24,9 +34,11 @@ function Page1({ formData, handleChange }) {
             label="Title"
             variant="standard"
             fullWidth
-            name="Title"
-            value={formData.title}
-            onChange={handleChange}
+            name="title"
+            value={personalInformation.title}
+            onChange={(e) =>
+              handleChangePersonalInformation("title", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={5}>
@@ -35,8 +47,10 @@ function Page1({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
+            value={personalInformation.firstName}
+            onChange={(e) =>
+              handleChangePersonalInformation("firstName", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={5}>
@@ -44,9 +58,11 @@ function Page1({ formData, handleChange }) {
             label="Surname"
             variant="standard"
             fullWidth
-            name="Surname"
-            value={formData.surname}
-            onChange={handleChange}
+            name="surName"
+            value={personalInformation.surName}
+            onChange={(e) =>
+              handleChangePersonalInformation("surName", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -57,8 +73,10 @@ function Page1({ formData, handleChange }) {
             InputLabelProps={{ shrink: true }}
             fullWidth
             name="dateOfBirth"
-            value={formData.dateOfBirth}
-            onChange={handleChange}
+            value={personalInformation.dateOfBirth}
+            onChange={(e) =>
+              handleChangePersonalInformation("dateOfBirth", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -68,8 +86,10 @@ function Page1({ formData, handleChange }) {
               row
               aria-label="gender"
               name="gender"
-              value={formData.gender}
-              onChange={handleChange}
+              value={personalInformation.gender}
+              onChange={(e) =>
+                handleChangePersonalInformation("gender", e.target.value)
+              }
             >
               <FormControlLabel value="male" control={<Radio />} label="Male" />
               <FormControlLabel
@@ -91,8 +111,13 @@ function Page1({ formData, handleChange }) {
                   row
                   aria-label="identificationType"
                   name="identificationType"
-                  value={formData.identificationType}
-                  onChange={handleChange}
+                  value={personalInformation.identificationType}
+                  onChange={(e) =>
+                    handleChangePersonalInformation(
+                      "identificationType",
+                      e.target.value
+                    )
+                  }
                 >
                   <FormControlLabel
                     value="nhis"
@@ -127,8 +152,10 @@ function Page1({ formData, handleChange }) {
                   variant="standard"
                   fullWidth
                   name="idNumber"
-                  value={formData.idNumber}
-                  onChange={handleChange}
+                  value={personalInformation.idNumber}
+                  onChange={(e) =>
+                    handleChangePersonalInformation("idNumber", e.target.value)
+                  }
                 />
               </Grid>
             </Grid>
@@ -146,8 +173,10 @@ function Page1({ formData, handleChange }) {
                 variant="standard"
                 fullWidth
                 name="teleHome"
-                value={formData.teleHome}
-                onChange={handleChange}
+                value={personalInformation.teleHome}
+                onChange={(e) =>
+                  handleChangePersonalInformation("teleHome", e.target.value)
+                }
               />
             </Grid>
             <Grid item xs={4}>
@@ -156,8 +185,10 @@ function Page1({ formData, handleChange }) {
                 variant="standard"
                 fullWidth
                 name="teleWork"
-                value={formData.teleWork}
-                onChange={handleChange}
+                value={personalInformation.teleWork}
+                onChange={(e) =>
+                  handleChangePersonalInformation("teleWork", e.target.value)
+                }
               />
             </Grid>
             <Grid item xs={4}>
@@ -166,8 +197,10 @@ function Page1({ formData, handleChange }) {
                 variant="standard"
                 fullWidth
                 name="mobilePhone"
-                value={formData.mobilePhone}
-                onChange={handleChange}
+                value={personalInformation.mobilePhone}
+                onChange={(e) =>
+                  handleChangePersonalInformation("mobilePhone", e.target.value)
+                }
               />
             </Grid>
           </Grid>
@@ -190,7 +223,10 @@ function Page1({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="addressLine1"
-            value={formData.addressLine1}
+            value={currentResidentialAddress.addressLine1}
+            onChange={(e) =>
+              handleChangeResidentialAddress("addressLine1", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -199,7 +235,10 @@ function Page1({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="addressLine2"
-            value={formData.addressLine2}
+            value={currentResidentialAddress.addressLine2}
+            onChange={(e) =>
+              handleChangeResidentialAddress("addressLine2", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -207,7 +246,11 @@ function Page1({ formData, handleChange }) {
             label="Name of community"
             variant="standard"
             fullWidth
-            name="addressLine2"
+            name="nameOfCommunity"
+            value={currentResidentialAddress.nameOfCommunity}
+            onChange={(e) =>
+              handleChangeResidentialAddress("nameOfCommunity", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -215,7 +258,11 @@ function Page1({ formData, handleChange }) {
             label="Nearest landmark"
             variant="standard"
             fullWidth
-            name="Nearestlandmark"
+            name="NearestLandmark"
+            value={currentResidentialAddress.nearestLandmark}
+            onChange={(e) =>
+              handleChangeResidentialAddress("nearestLandmark", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -224,6 +271,10 @@ function Page1({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="city"
+            value={currentResidentialAddress.city}
+            onChange={(e) =>
+              handleChangeResidentialAddress("city", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -233,6 +284,14 @@ function Page1({ formData, handleChange }) {
             type="date"
             InputLabelProps={{ shrink: true }}
             fullWidth
+            name="livingAtAddressSince"
+            value={currentResidentialAddress.livingAtAddressSince}
+            onChange={(e) =>
+              handleChangeResidentialAddress(
+                "livingAtAddressSince",
+                e.target.value
+              )
+            }
           />
         </Grid>
         <Grid item xs={12}>
@@ -246,7 +305,13 @@ function Page1({ formData, handleChange }) {
                   row
                   aria-label="residentialType"
                   name="residentialType"
-                  value={formData.residentialType}
+                  value={currentResidentialAddress.residentialStatus.type}
+                  onChange={(e) =>
+                    handleChangeResidentialAddress(
+                      "residentialStatus.type",
+                      e.target.value
+                    )
+                  }
                 >
                   <FormControlLabel
                     value="Rent"
@@ -286,16 +351,43 @@ function Page1({ formData, handleChange }) {
                   variant="standard"
                   fullWidth
                   name="pleaseSpecify"
+                  value={
+                    currentResidentialAddress.residentialStatus.pleaseSpecify
+                  }
+                  onChange={(e) =>
+                    handleChangeResidentialAddress(
+                      "residentialStatus.pleaseSpecify",
+                      e.target.value
+                    )
+                  }
                 />
               </Grid>
             </Grid>
           </FormControl>
         </Grid>
         <Grid item xs={12}>
-          <TextField label="Postal address" variant="standard" fullWidth />
+          <TextField
+            label="Postal address"
+            variant="standard"
+            fullWidth
+            name="postalAddress"
+            value={currentResidentialAddress.postalAddress}
+            onChange={(e) =>
+              handleChangeResidentialAddress("postalAddress", e.target.value)
+            }
+          />
         </Grid>
         <Grid item xs={6}>
-          <TextField label="Town/city" variant="standard" fullWidth />
+          <TextField
+            label=" Postal Town"
+            variant="standard"
+            fullWidth
+            name="postalTown"
+            value={currentResidentialAddress.postalTown}
+            onChange={(e) =>
+              handleChangeResidentialAddress(" postalTown", e.target.value)
+            }
+          />
         </Grid>
         <Grid item xs={6}>
           <TextField
@@ -304,6 +396,14 @@ function Page1({ formData, handleChange }) {
             type="date"
             InputLabelProps={{ shrink: true }}
             fullWidth
+            name="usingPostalAddressSince"
+            value={currentResidentialAddress.usingPostalAddressSince}
+            onChange={(e) =>
+              handleChangeResidentialAddress(
+                "usingPostalAddressSince",
+                e.target.value
+              )
+            }
           />
         </Grid>
       </Grid>
@@ -324,7 +424,10 @@ function Page1({ formData, handleChange }) {
               row
               aria-label="maritalStatus"
               name="maritalStatus"
-              value={formData.maritalStatus}
+              value={MaritalStatus.maritalStatus}
+              onChange={(e) =>
+                handleChangeMaritalStatus("maritalStatus", e.target.value)
+              }
             >
               <FormControlLabel
                 value="single"
@@ -360,7 +463,15 @@ function Page1({ formData, handleChange }) {
             <Typography variant="caption" gutterBottom>
               How married
             </Typography>
-            <RadioGroup row aria-label="residentialType" name="residentialType">
+            <RadioGroup
+              row
+              aria-label="howMarried"
+              name="howMarried"
+              value={MaritalStatus.howMarried}
+              onChange={(e) =>
+                handleChangeMaritalStatus("howMarried", e.target.value)
+              }
+            >
               <FormControlLabel
                 value="CustomaryMarriage"
                 control={<Radio />}

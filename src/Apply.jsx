@@ -35,7 +35,7 @@ const Apply = () => {
   const { darkMode, toggleDarkMode } = useThemeStore()
 
   const { currentIndex, goBackwards, goForwards, isFirstStep, isLastStep } =
-    useMultiForm(10)
+    useMultiForm(8)
 
   const theme = createTheme({
     palette: {
@@ -79,6 +79,10 @@ const Apply = () => {
             <form onSubmit={handleSubmit}>
               {currentIndex === 0 && (
                 <Page1
+                  personalInformation={personalInformation}
+                  currentResidentialAddress={currentResidentialAddress}
+                  MaritalStatus={maritalStatusAndDependents}
+                  Referee1={referee1}
                   handleChangePersonalInformation={
                     handleChangePersonalInformation
                   }
