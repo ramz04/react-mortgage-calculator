@@ -1,4 +1,3 @@
-import { useState } from "react"
 import Navbar from "./Components/Navbar"
 import useThemeStore from "./context"
 import { ThemeProvider } from "@mui/material/styles"
@@ -22,6 +21,7 @@ import Page5 from "./Components/Form/Page5"
 import Page6 from "./Components/Form/Page6"
 import Page7 from "./Components/Form/Page7"
 import Page8 from "./Components/Form/Page8"
+import useFormStore from "./state"
 
 const MyPaper = styled(Paper)({
   marginTop: (theme) => theme.spacing(3),
@@ -30,35 +30,6 @@ const MyPaper = styled(Paper)({
   border: "none", // Remove border
   background: "none",
 })
-
-const initialValues = {
-  // Personal Information
-  title: "",
-  firstName: "",
-  lastName: "",
-  email: "",
-  phoneNumber: "",
-  dateOfBirth: "",
-
-  // Current Residential Address
-  addressLine1: "",
-  addressLine2: "",
-  city: "",
-  state: "",
-  zipCode: "",
-
-  // Marital Status and Dependents
-  maritalStatus: "single",
-  dependants: "",
-
-  // Referee 1
-  referee1Name: "",
-  referee1PhoneNumber: "",
-
-  // Referee 2
-  referee2Name: "",
-  referee2PhoneNumber: "",
-}
 
 const Apply = () => {
   const { darkMode, toggleDarkMode } = useThemeStore()
@@ -72,27 +43,26 @@ const Apply = () => {
     },
   })
 
-  const [formData, setFormData] = useState(initialValues)
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }))
-  }
-
-  const handleMaritalStatusChange = (e) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      maritalStatus: e.target.value,
-    }))
-  }
+  const {
+    personalInformation,
+    currentResidentialAddress,
+    maritalStatusAndDependents,
+    referee1,
+    handleChangePersonalInformation,
+    handleChangeResidentialAddress,
+    handleChangeMaritalStatus,
+    handleChangeReferee1,
+  } = useFormStore()
 
   const handleSubmit = (e) => {
     e.preventDefault()
     // Add logic to submit the form data (e.g., send to server)
-    console.log("Form data submitted:", formData)
+    console.log("Form data submitted:", {
+      personalInformation,
+      currentResidentialAddress,
+      maritalStatusAndDependents,
+      referee1,
+    })
     goForwards()
   }
 
@@ -109,60 +79,23 @@ const Apply = () => {
             <form onSubmit={handleSubmit}>
               {currentIndex === 0 && (
                 <Page1
-                  formData={formData}
-                  handleMaritalStatusChange={handleMaritalStatusChange}
-                  handleChange={handleChange}
+                  handleChangePersonalInformation={
+                    handleChangePersonalInformation
+                  }
+                  handleChangeResidentialAddress={
+                    handleChangeResidentialAddress
+                  }
+                  handleChangeMaritalStatus={handleChangeMaritalStatus}
+                  handleChangeReferee1={handleChangeReferee1}
                 />
               )}
-              {currentIndex === 1 && (
-                <Page2
-                  formData={formData}
-                  handleMaritalStatusChange={handleMaritalStatusChange}
-                  handleChange={handleChange}
-                />
-              )}
-              {currentIndex === 2 && (
-                <Page3
-                  formData={formData}
-                  handleMaritalStatusChange={handleMaritalStatusChange}
-                  handleChange={handleChange}
-                />
-              )}
-              {currentIndex === 3 && (
-                <Page4
-                  formData={formData}
-                  handleMaritalStatusChange={handleMaritalStatusChange}
-                  handleChange={handleChange}
-                />
-              )}
-              {currentIndex === 4 && (
-                <Page5
-                  formData={formData}
-                  handleMaritalStatusChange={handleMaritalStatusChange}
-                  handleChange={handleChange}
-                />
-              )}
-              {currentIndex === 5 && (
-                <Page6
-                  formData={formData}
-                  handleMaritalStatusChange={handleMaritalStatusChange}
-                  handleChange={handleChange}
-                />
-              )}
-              {currentIndex === 6 && (
-                <Page7
-                  formData={formData}
-                  handleMaritalStatusChange={handleMaritalStatusChange}
-                  handleChange={handleChange}
-                />
-              )}
-              {currentIndex === 7 && (
-                <Page8
-                  formData={formData}
-                  handleMaritalStatusChange={handleMaritalStatusChange}
-                  handleChange={handleChange}
-                />
-              )}
+              {currentIndex === 1 && <Page2 />}
+              {currentIndex === 2 && <Page3 />}
+              {currentIndex === 3 && <Page4 />}
+              {currentIndex === 4 && <Page5 />}
+              {currentIndex === 5 && <Page6 />}
+              {currentIndex === 6 && <Page7 />}
+              {currentIndex === 7 && <Page8 />}
               {/* Submit Button */}
               <Box
                 sx={{

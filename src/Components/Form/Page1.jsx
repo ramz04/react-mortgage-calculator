@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import {
   Typography,
@@ -10,7 +11,7 @@ import {
   FormLabel,
 } from "@mui/material"
 
-function Page1({ formData, handleChange, handleMaritalStatusChange }) {
+function Page1({ formData, handleChange }) {
   return (
     <div>
       {/* Personal Information */}
@@ -44,7 +45,7 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             variant="standard"
             fullWidth
             name="Surname"
-            value={formData.lastName}
+            value={formData.surname}
             onChange={handleChange}
           />
         </Grid>
@@ -76,7 +77,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 control={<Radio />}
                 label="Female"
               />
-              {/* Add more gender options if needed */}
             </RadioGroup>
           </FormControl>
         </Grid>
@@ -127,6 +127,7 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                   variant="standard"
                   fullWidth
                   name="idNumber"
+                  value={formData.idNumber}
                   onChange={handleChange}
                 />
               </Grid>
@@ -145,6 +146,7 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 variant="standard"
                 fullWidth
                 name="teleHome"
+                value={formData.teleHome}
                 onChange={handleChange}
               />
             </Grid>
@@ -154,6 +156,7 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 variant="standard"
                 fullWidth
                 name="teleWork"
+                value={formData.teleWork}
                 onChange={handleChange}
               />
             </Grid>
@@ -163,6 +166,7 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 variant="standard"
                 fullWidth
                 name="mobilePhone"
+                value={formData.mobilePhone}
                 onChange={handleChange}
               />
             </Grid>
@@ -187,7 +191,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             fullWidth
             name="addressLine1"
             value={formData.addressLine1}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
@@ -197,7 +200,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             fullWidth
             name="addressLine2"
             value={formData.addressLine2}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
@@ -206,7 +208,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             variant="standard"
             fullWidth
             name="addressLine2"
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
@@ -215,7 +216,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             variant="standard"
             fullWidth
             name="Nearestlandmark"
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
@@ -224,7 +224,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             variant="standard"
             fullWidth
             name="city"
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
@@ -234,7 +233,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             type="date"
             InputLabelProps={{ shrink: true }}
             fullWidth
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={12}>
@@ -249,7 +247,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                   aria-label="residentialType"
                   name="residentialType"
                   value={formData.residentialType}
-                  onChange={handleChange}
                 >
                   <FormControlLabel
                     value="Rent"
@@ -289,27 +286,16 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                   variant="standard"
                   fullWidth
                   name="pleaseSpecify"
-                  onChange={handleChange}
                 />
               </Grid>
             </Grid>
           </FormControl>
         </Grid>
         <Grid item xs={12}>
-          <TextField
-            label="Postal address"
-            variant="standard"
-            fullWidth
-            onChange={handleChange}
-          />
+          <TextField label="Postal address" variant="standard" fullWidth />
         </Grid>
         <Grid item xs={6}>
-          <TextField
-            label="Town/city"
-            variant="standard"
-            fullWidth
-            onChange={handleChange}
-          />
+          <TextField label="Town/city" variant="standard" fullWidth />
         </Grid>
         <Grid item xs={6}>
           <TextField
@@ -318,7 +304,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             type="date"
             InputLabelProps={{ shrink: true }}
             fullWidth
-            onChange={handleChange}
           />
         </Grid>
       </Grid>
@@ -340,7 +325,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
               aria-label="maritalStatus"
               name="maritalStatus"
               value={formData.maritalStatus}
-              onChange={handleMaritalStatusChange}
             >
               <FormControlLabel
                 value="single"
@@ -376,13 +360,7 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             <Typography variant="caption" gutterBottom>
               How married
             </Typography>
-            <RadioGroup
-              row
-              aria-label="residentialType"
-              name="residentialType"
-              value={formData.residentialType}
-              onChange={handleChange}
-            >
+            <RadioGroup row aria-label="residentialType" name="residentialType">
               <FormControlLabel
                 value="CustomaryMarriage"
                 control={<Radio />}
@@ -413,7 +391,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 type="number"
                 fullWidth
                 name="Spouse"
-                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={3}>
@@ -423,7 +400,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 type="number"
                 fullWidth
                 name="Children"
-                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={3}>
@@ -433,7 +409,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 type="number"
                 fullWidth
                 name="Other"
-                onChange={handleChange}
               />
             </Grid>
           </Grid>
@@ -449,7 +424,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 variant="standard"
                 fullWidth
                 name="title"
-                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={4}>
@@ -458,7 +432,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 variant="standard"
                 fullWidth
                 name="FirstName"
-                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={4}>
@@ -467,7 +440,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 variant="standard"
                 fullWidth
                 name="Surname"
-                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -476,7 +448,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 variant="standard"
                 fullWidth
                 name="mobile number"
-                onChange={handleChange}
               />
             </Grid>
           </Grid>
@@ -494,13 +465,7 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={3}>
-          <TextField
-            label="Title"
-            variant="standard"
-            fullWidth
-            name="title"
-            onChange={handleChange}
-          />
+          <TextField label="Title" variant="standard" fullWidth name="title" />
         </Grid>
         <Grid item xs={4}>
           <TextField
@@ -508,7 +473,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             variant="standard"
             fullWidth
             name="FirstName"
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={4}>
@@ -517,7 +481,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             variant="standard"
             fullWidth
             name="Surname"
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={3}>
@@ -526,7 +489,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             variant="standard"
             fullWidth
             name="Relationship"
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={4}>
@@ -535,7 +497,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             variant="standard"
             fullWidth
             name="Mobile number"
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={4}>
@@ -546,7 +507,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
             InputLabelProps={{ shrink: true }}
             type="date"
             name="Date of birth"
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={12}>
@@ -561,7 +521,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 fullWidth
                 name="addressLine1"
                 value={formData.addressLine1}
-                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={4}>
@@ -571,7 +530,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 fullWidth
                 name="addressLine2"
                 value={formData.addressLine2}
-                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={4}>
@@ -580,7 +538,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 variant="standard"
                 fullWidth
                 name="addressLine2"
-                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={4}>
@@ -589,7 +546,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 variant="standard"
                 fullWidth
                 name="Nearestlandmark"
-                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={4}>
@@ -598,7 +554,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 variant="standard"
                 fullWidth
                 name="city"
-                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={4}>
@@ -608,7 +563,6 @@ function Page1({ formData, handleChange, handleMaritalStatusChange }) {
                 type="date"
                 InputLabelProps={{ shrink: true }}
                 fullWidth
-                onChange={handleChange}
               />
             </Grid>
           </Grid>
