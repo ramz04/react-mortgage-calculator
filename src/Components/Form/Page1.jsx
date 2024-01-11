@@ -12,7 +12,6 @@ import {
 } from "@mui/material"
 
 function Page1({
-  formData,
   personalInformation,
   currentResidentialAddress,
   MaritalStatus,
@@ -502,6 +501,13 @@ function Page1({
                 type="number"
                 fullWidth
                 name="Spouse"
+                value={MaritalStatus.numberOfDependants.spouse}
+                onChange={(e) =>
+                  handleChangeMaritalStatus(
+                    "numberOfDependants.spouse",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
             <Grid item xs={3}>
@@ -511,6 +517,13 @@ function Page1({
                 type="number"
                 fullWidth
                 name="Children"
+                value={MaritalStatus.numberOfDependants.children}
+                onChange={(e) =>
+                  handleChangeMaritalStatus(
+                    "numberOfDependants.children",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
             <Grid item xs={3}>
@@ -520,6 +533,13 @@ function Page1({
                 type="number"
                 fullWidth
                 name="Other"
+                value={MaritalStatus.numberOfDependants.other}
+                onChange={(e) =>
+                  handleChangeMaritalStatus(
+                    "numberOfDependants.other",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
           </Grid>
@@ -535,6 +555,13 @@ function Page1({
                 variant="standard"
                 fullWidth
                 name="title"
+                value={MaritalStatus.spouseDetails.title}
+                onChange={(e) =>
+                  handleChangeMaritalStatus(
+                    "spouseDetails.title",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
             <Grid item xs={4}>
@@ -543,6 +570,13 @@ function Page1({
                 variant="standard"
                 fullWidth
                 name="FirstName"
+                value={MaritalStatus.spouseDetails.firstName}
+                onChange={(e) =>
+                  handleChangeMaritalStatus(
+                    "spouseDetails.firstName",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
             <Grid item xs={4}>
@@ -551,6 +585,13 @@ function Page1({
                 variant="standard"
                 fullWidth
                 name="Surname"
+                value={MaritalStatus.spouseDetails.surname}
+                onChange={(e) =>
+                  handleChangeMaritalStatus(
+                    "spouseDetails.surname",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
             <Grid item xs={12}>
@@ -559,6 +600,13 @@ function Page1({
                 variant="standard"
                 fullWidth
                 name="mobile number"
+                value={MaritalStatus.spouseDetails.mobileNumber}
+                onChange={(e) =>
+                  handleChangeMaritalStatus(
+                    "spouseDetails.mobileNumber",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
           </Grid>
@@ -576,7 +624,14 @@ function Page1({
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={3}>
-          <TextField label="Title" variant="standard" fullWidth name="title" />
+          <TextField
+            label="Title"
+            variant="standard"
+            fullWidth
+            name="title"
+            value={Referee1.title}
+            onChange={(e) => handleChangeReferee1("title", e.target.value)}
+          />
         </Grid>
         <Grid item xs={4}>
           <TextField
@@ -584,6 +639,8 @@ function Page1({
             variant="standard"
             fullWidth
             name="FirstName"
+            value={Referee1.firstName}
+            onChange={(e) => handleChangeReferee1("firstName", e.target.value)}
           />
         </Grid>
         <Grid item xs={4}>
@@ -592,6 +649,8 @@ function Page1({
             variant="standard"
             fullWidth
             name="Surname"
+            value={Referee1.surname}
+            onChange={(e) => handleChangeReferee1("surname", e.target.value)}
           />
         </Grid>
         <Grid item xs={3}>
@@ -600,6 +659,10 @@ function Page1({
             variant="standard"
             fullWidth
             name="Relationship"
+            value={Referee1.relationship}
+            onChange={(e) =>
+              handleChangeReferee1("relationship", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={4}>
@@ -608,6 +671,10 @@ function Page1({
             variant="standard"
             fullWidth
             name="Mobile number"
+            value={Referee1.mobileNumber}
+            onChange={(e) =>
+              handleChangeReferee1("mobileNumber", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={4}>
@@ -618,6 +685,10 @@ function Page1({
             InputLabelProps={{ shrink: true }}
             type="date"
             name="Date of birth"
+            value={Referee1.dateOfBirth}
+            onChange={(e) =>
+              handleChangeReferee1("dateOfBirth", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={12}>
@@ -631,7 +702,13 @@ function Page1({
                 variant="standard"
                 fullWidth
                 name="addressLine1"
-                value={formData.addressLine1}
+                value={Referee1.residentialAddress.addressLine1}
+                onChange={(e) =>
+                  handleChangeReferee1(
+                    "residentialAddress.addressLine1",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
             <Grid item xs={4}>
@@ -640,7 +717,13 @@ function Page1({
                 variant="standard"
                 fullWidth
                 name="addressLine2"
-                value={formData.addressLine2}
+                value={Referee1.residentialAddress.addressLine2}
+                onChange={(e) =>
+                  handleChangeReferee1(
+                    "residentialAddress.addressLine2",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
             <Grid item xs={4}>
@@ -648,7 +731,14 @@ function Page1({
                 label="Name of community"
                 variant="standard"
                 fullWidth
-                name="addressLine2"
+                name="nameOfCommunity"
+                value={Referee1.residentialAddress.nameOfCommunity}
+                onChange={(e) =>
+                  handleChangeReferee1(
+                    "residentialAddress.nameOfCommunity",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
             <Grid item xs={4}>
@@ -657,6 +747,13 @@ function Page1({
                 variant="standard"
                 fullWidth
                 name="Nearestlandmark"
+                value={Referee1.residentialAddress.nearestLandmark}
+                onChange={(e) =>
+                  handleChangeReferee1(
+                    "residentialAddress.nearestLandmark",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
             <Grid item xs={4}>
@@ -665,6 +762,13 @@ function Page1({
                 variant="standard"
                 fullWidth
                 name="city"
+                value={Referee1.residentialAddress.city}
+                onChange={(e) =>
+                  handleChangeReferee1(
+                    "residentialAddress.city",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
             <Grid item xs={4}>
@@ -674,6 +778,14 @@ function Page1({
                 type="date"
                 InputLabelProps={{ shrink: true }}
                 fullWidth
+                name="livingAtAddressSince"
+                value={Referee1.residentialAddress.livingAtAddressSince}
+                onChange={(e) =>
+                  handleChangeReferee1(
+                    "residentialAddress.livingAtAddressSince",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
           </Grid>

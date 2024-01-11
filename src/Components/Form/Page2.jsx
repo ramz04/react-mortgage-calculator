@@ -10,7 +10,7 @@ import {
   FormLabel,
 } from "@mui/material"
 
-function Page2({ formData, handleChange }) {
+function Page2() {
   return (
     <div>
       {/* Referee 2 */}
@@ -24,13 +24,7 @@ function Page2({ formData, handleChange }) {
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={3}>
-          <TextField
-            label="Title"
-            variant="standard"
-            fullWidth
-            name="title"
-            onChange={handleChange}
-          />
+          <TextField label="Title" variant="standard" fullWidth name="title" />
         </Grid>
         <Grid item xs={4}>
           <TextField
@@ -38,7 +32,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="FirstName"
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={4}>
@@ -47,7 +40,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Surname"
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={3}>
@@ -56,7 +48,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Relationship"
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={4}>
@@ -65,7 +56,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Mobile number"
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={4}>
@@ -76,7 +66,6 @@ function Page2({ formData, handleChange }) {
             InputLabelProps={{ shrink: true }}
             type="date"
             name="Date of birth"
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={12}>
@@ -90,8 +79,6 @@ function Page2({ formData, handleChange }) {
                 variant="standard"
                 fullWidth
                 name="addressLine1"
-                value={formData.addressLine1}
-                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={4}>
@@ -100,8 +87,6 @@ function Page2({ formData, handleChange }) {
                 variant="standard"
                 fullWidth
                 name="addressLine2"
-                value={formData.addressLine2}
-                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={4}>
@@ -110,7 +95,6 @@ function Page2({ formData, handleChange }) {
                 variant="standard"
                 fullWidth
                 name="addressLine2"
-                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={4}>
@@ -119,7 +103,6 @@ function Page2({ formData, handleChange }) {
                 variant="standard"
                 fullWidth
                 name="Nearestlandmark"
-                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={4}>
@@ -128,7 +111,6 @@ function Page2({ formData, handleChange }) {
                 variant="standard"
                 fullWidth
                 name="city"
-                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={4}>
@@ -138,7 +120,6 @@ function Page2({ formData, handleChange }) {
                 type="date"
                 InputLabelProps={{ shrink: true }}
                 fullWidth
-                onChange={handleChange}
               />
             </Grid>
           </Grid>
@@ -156,13 +137,7 @@ function Page2({ formData, handleChange }) {
       <Grid item xs={12}>
         <FormControl component="fieldset">
           <FormLabel component="legend">Types of employment</FormLabel>
-          <RadioGroup
-            row
-            aria-label="employmentType"
-            name="employmentType"
-            value={formData.employmentType}
-            onChange={handleChange}
-          >
+          <RadioGroup row aria-label="employmentType" name="employmentType">
             <FormControlLabel
               value="Permanent"
               control={<Radio />}
@@ -211,31 +186,13 @@ function Page2({ formData, handleChange }) {
       </Typography>
       <Grid container spacing={1} style={{ marginBottom: "15px" }}>
         <Grid item xs={6}>
-          <TextField
-            label="Employer's name"
-            variant="standard"
-            fullWidth
-            value={formData.employerName}
-            onChange={handleChange}
-          />
+          <TextField label="Employer's name" variant="standard" fullWidth />
         </Grid>
         <Grid item xs={6}>
-          <TextField
-            label="Industry/sector"
-            variant="standard"
-            fullWidth
-            value={formData.IndustrySector}
-            onChange={handleChange}
-          />
+          <TextField label="Industry/sector" variant="standard" fullWidth />
         </Grid>
         <Grid item xs={12}>
-          <TextField
-            label="Address"
-            variant="standard"
-            fullWidth
-            value={formData.Address}
-            onChange={handleChange}
-          />
+          <TextField label="Address" variant="standard" fullWidth />
         </Grid>
         <Grid item xs={6}>
           <TextField
@@ -243,18 +200,10 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             type="number"
             fullWidth
-            value={formData.EmployerTelephone}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
-          <TextField
-            label="Town/city"
-            variant="standard"
-            fullWidth
-            value={formData.TownCity}
-            onChange={handleChange}
-          />
+          <TextField label="Town/city" variant="standard" fullWidth />
         </Grid>
       </Grid>
       <Typography variant="caption" gutterBottom>
@@ -269,8 +218,6 @@ function Page2({ formData, handleChange }) {
             InputLabelProps={{ shrink: true }}
             fullWidth
             name="Employment date"
-            value={formData.EmploymentDate}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={4}>
@@ -283,8 +230,6 @@ function Page2({ formData, handleChange }) {
             fullWidth
             name="Contract expiry date
 (if applicable)"
-            value={formData.ContractExpiryDate}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={4}>
@@ -294,8 +239,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="SSNIT number"
-            value={formData.SSNITnumber}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
@@ -305,8 +248,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Telephone number"
-            value={formData.telephoneNumber}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
@@ -315,8 +256,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Highest level of education"
-            value={formData.educationLevel}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
@@ -325,8 +264,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Occupation"
-            value={formData.Occupation}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
@@ -335,8 +272,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Designation"
-            value={formData.Designation}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={4}>
@@ -346,8 +281,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Gross monthly salary"
-            value={formData.GrossMonthlySalary}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={4}>
@@ -357,8 +290,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Net monthly salary"
-            value={formData.NetMonthlySalary}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={4}>
@@ -368,8 +299,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Staff number"
-            value={formData.StaffNumber}
-            onChange={handleChange}
           />
         </Grid>
       </Grid>
@@ -382,8 +311,6 @@ function Page2({ formData, handleChange }) {
           variant="standard"
           fullWidth
           name="employmentPeriod"
-          value={formData.employmentPeriod}
-          onChange={handleChange}
           placeholder="Start Date - End Date"
           helperText="Enter the period in the format 'Start Date - End Date'"
         />
@@ -402,13 +329,7 @@ function Page2({ formData, handleChange }) {
           <FormLabel component="legend">Account Type</FormLabel>
           <Grid container spacing={0}>
             <Grid item xs={8}>
-              <RadioGroup
-                row
-                aria-label="accountType"
-                name="accountType"
-                value={formData.accountType}
-                onChange={handleChange}
-              >
+              <RadioGroup row aria-label="accountType" name="accountType">
                 <FormControlLabel
                   value="Cheque/Current"
                   control={<Radio />}
@@ -432,7 +353,6 @@ function Page2({ formData, handleChange }) {
                 variant="standard"
                 fullWidth
                 name="pleaseSpecify"
-                onChange={handleChange}
               />
             </Grid>
           </Grid>
@@ -446,8 +366,6 @@ function Page2({ formData, handleChange }) {
               variant="standard"
               fullWidth
               name="heldInTheNameOf"
-              value={formData.heldInTheNameOf}
-              onChange={handleChange}
             />
           </Grid>
           <Grid item xs={6}>
@@ -455,13 +373,7 @@ function Page2({ formData, handleChange }) {
               <FormLabel component="legend">
                 Transactional account/Salary account
               </FormLabel>
-              <RadioGroup
-                row
-                aria-label="SalaryAccount"
-                name="salaryAccount"
-                value={formData.salaryAccount}
-                onChange={handleChange}
-              >
+              <RadioGroup row aria-label="SalaryAccount" name="salaryAccount">
                 <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
                 <FormControlLabel value="No" control={<Radio />} label="No" />
               </RadioGroup>
@@ -476,8 +388,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Bank or financial institution"
-            value={formData.Bank}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
@@ -486,8 +396,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Branch name"
-            value={formData.BranchName}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
@@ -498,8 +406,6 @@ function Page2({ formData, handleChange }) {
             InputLabelProps={{ shrink: true }}
             fullWidth
             name="Date opened [bank use]"
-            value={formData.DateOpened}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
@@ -509,8 +415,6 @@ function Page2({ formData, handleChange }) {
             type="number"
             fullWidth
             name="Account number"
-            value={formData.AccountNumber}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
@@ -520,8 +424,6 @@ function Page2({ formData, handleChange }) {
             type="number"
             fullWidth
             name="Branch code"
-            value={formData.BranchCode}
-            onChange={handleChange}
           />
         </Grid>
       </Grid>
@@ -541,8 +443,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Rent/mortgage payment"
-            value={formData.RentMortgagePayment}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
@@ -551,8 +451,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Vehicle finance payment"
-            value={formData.VehicleFinancePayment}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
@@ -561,8 +459,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Other verifiable monthly income"
-            value={formData.OtherVerifiableMonthlyIncome}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
@@ -571,8 +467,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Other debt payments"
-            value={formData.OtherDebtPayments}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
@@ -583,8 +477,6 @@ function Page2({ formData, handleChange }) {
             fullWidth
             name="Guaranteed bonus/13th cheque
 (if applicable)"
-            value={formData.GuaranteedBonus}
-            onChange={handleChange}
           />
         </Grid>
         <Grid item xs={6}>
@@ -593,8 +485,6 @@ function Page2({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Other monthly commitments"
-            value={formData.monthlyCommitments}
-            onChange={handleChange}
           />
         </Grid>
       </Grid>
@@ -609,14 +499,7 @@ function Page2({ formData, handleChange }) {
       </Typography>
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          <TextField
-            label="Total"
-            variant="standard"
-            fullWidth
-            name="Total"
-            value={formData.total}
-            onChange={handleChange}
-          />
+          <TextField label="Total" variant="standard" fullWidth name="Total" />
         </Grid>
       </Grid>
       <Grid container spacing={1} style={{ marginTop: "15px" }}>
@@ -625,13 +508,7 @@ function Page2({ formData, handleChange }) {
             <FormLabel component="legend">
               Have you been declared insolvent in the last ten years?
             </FormLabel>
-            <RadioGroup
-              row
-              aria-label="insolent"
-              name="insolent"
-              value={formData.insolent}
-              onChange={handleChange}
-            >
+            <RadioGroup row aria-label="insolent" name="insolent">
               <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
               <FormControlLabel value="No" control={<Radio />} label="No" />
             </RadioGroup>
@@ -645,8 +522,6 @@ function Page2({ formData, handleChange }) {
             fullWidth
             InputLabelProps={{ shrink: true }}
             name="If yes, rehabilitation date"
-            value={formData.rehabilitationDate}
-            onChange={handleChange}
           />
         </Grid>
       </Grid>
@@ -656,13 +531,7 @@ function Page2({ formData, handleChange }) {
             <FormLabel component="legend">
               Are you a guarantor/surety for anybody or anything else?
             </FormLabel>
-            <RadioGroup
-              row
-              aria-label="guarantor"
-              name="guarantor"
-              value={formData.guarantor}
-              onChange={handleChange}
-            >
+            <RadioGroup row aria-label="guarantor" name="guarantor">
               <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
               <FormControlLabel value="No" control={<Radio />} label="No" />
             </RadioGroup>
@@ -676,8 +545,6 @@ details of guarantee"
             fullWidth
             name="If yes, please give
 details of guarantee"
-            value={formData.isGuarantor}
-            onChange={handleChange}
           />
         </Grid>
       </Grid>
@@ -699,8 +566,6 @@ details of guarantee"
             type="number"
             fullWidth
             name="Loan amount applied for"
-            value={formData.loanAmount}
-            onChange={handleChange}
           />
         </Grid>
       </Grid>
@@ -709,13 +574,7 @@ details of guarantee"
           <FormLabel component="legend">Loan Type</FormLabel>
           <Grid container spacing={0}>
             <Grid item xs={8}>
-              <RadioGroup
-                row
-                aria-label="loanType"
-                name="loanType"
-                value={formData.loanType}
-                onChange={handleChange}
-              >
+              <RadioGroup row aria-label="loanType" name="loanType">
                 <FormControlLabel
                   value="Fixed term loan"
                   control={<Radio />}
@@ -754,7 +613,6 @@ details of guarantee"
                 variant="standard"
                 fullWidth
                 name="pleaseSpecify"
-                onChange={handleChange}
               />
             </Grid>
           </Grid>
@@ -764,13 +622,7 @@ details of guarantee"
         <Grid item xs={3}>
           <FormControl component="fieldset" style={{ marginTop: "16px" }}>
             <FormLabel component="legend">Interest rate</FormLabel>
-            <RadioGroup
-              row
-              aria-label="interestRate"
-              name="interestRate"
-              value={formData.interestRate}
-              onChange={handleChange}
-            >
+            <RadioGroup row aria-label="interestRate" name="interestRate">
               <FormControlLabel
                 value="Fixed"
                 control={<Radio />}
@@ -785,13 +637,7 @@ details of guarantee"
           </FormControl>
         </Grid>
         <Grid item xs={3}>
-          <TextField
-            label="Score"
-            variant="standard"
-            fullWidth
-            name="Score"
-            onChange={handleChange}
-          />
+          <TextField label="Score" variant="standard" fullWidth name="Score" />
         </Grid>
         <Grid item xs={3}>
           <Grid container spacing={1} alignItems="center">
@@ -799,13 +645,7 @@ details of guarantee"
               Base rate
             </Typography>
             <Grid item xs={2}>
-              <TextField
-                variant="standard"
-                fullWidth
-                name="min"
-                value={formData.minRate}
-                onChange={handleChange}
-              />
+              <TextField variant="standard" fullWidth name="min" />
             </Grid>
             <Grid item xs={1}>
               <Typography variant="h6" align="center">
@@ -813,13 +653,7 @@ details of guarantee"
               </Typography>
             </Grid>
             <Grid item xs={2}>
-              <TextField
-                variant="standard"
-                fullWidth
-                name="max"
-                value={formData.maxRate}
-                onChange={handleChange}
-              />
+              <TextField variant="standard" fullWidth name="max" />
             </Grid>
           </Grid>
         </Grid>
@@ -829,13 +663,7 @@ details of guarantee"
               Margin
             </Typography>
             <Grid item xs={2}>
-              <TextField
-                variant="standard"
-                fullWidth
-                name="min"
-                value={formData.min}
-                onChange={handleChange}
-              />
+              <TextField variant="standard" fullWidth name="min" />
             </Grid>
             <Grid item xs={1}>
               <Typography variant="h6" align="center">
@@ -843,13 +671,7 @@ details of guarantee"
               </Typography>
             </Grid>
             <Grid item xs={2}>
-              <TextField
-                variant="standard"
-                fullWidth
-                name="max"
-                value={formData.max}
-                onChange={handleChange}
-              />
+              <TextField variant="standard" fullWidth name="max" />
             </Grid>
           </Grid>
         </Grid>
@@ -862,8 +684,6 @@ details of guarantee"
                   row
                   aria-label="Repayment method"
                   name="Repayment method"
-                  value={formData.RepaymentMethod}
-                  onChange={handleChange}
                 >
                   <FormControlLabel
                     value="Direct payroll deduction"
@@ -907,8 +727,6 @@ details of guarantee"
                 type="number"
                 fullWidth
                 name="Months"
-                value={formData.months}
-                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={6}>
@@ -918,8 +736,6 @@ details of guarantee"
                 type="number"
                 fullWidth
                 name="Repayment amount"
-                value={formData.RepaymentAmount}
-                onChange={handleChange}
               />
             </Grid>
           </Grid>
@@ -935,8 +751,6 @@ details of guarantee"
               row
               aria-label="LoanProtectionCover"
               name="LoanProtectionCover"
-              value={formData.LoanProtectionCover}
-              onChange={handleChange}
             >
               <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
               <FormControlLabel value="No" control={<Radio />} label="No" />
@@ -956,8 +770,6 @@ details of guarantee"
                   row
                   aria-label="AcceptLesserOffer"
                   name="AcceptLesserOffer"
-                  value={formData.AcceptLesserOffer}
-                  onChange={handleChange}
                 >
                   <FormControlLabel
                     value="Yes"
@@ -975,8 +787,6 @@ details of guarantee"
                 type="number"
                 fullWidth
                 name="Minimum amount"
-                value={formData.MinimumAmount}
-                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={4}>
@@ -986,8 +796,6 @@ details of guarantee"
                 type="number"
                 fullWidth
                 name="Signature"
-                value={formData.Signature}
-                onChange={handleChange}
               />
             </Grid>
           </Grid>
