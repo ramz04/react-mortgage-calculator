@@ -19,6 +19,9 @@ import Page2 from "./Components/Form/Page2"
 import Page3 from "./Components/Form/Page3"
 import Page4 from "./Components/Form/Page4"
 import Page5 from "./Components/Form/Page5"
+import Page6 from "./Components/Form/Page6"
+import Page7 from "./Components/Form/Page7"
+import Page8 from "./Components/Form/Page8"
 
 const MyPaper = styled(Paper)({
   marginTop: (theme) => theme.spacing(3),
@@ -134,6 +137,27 @@ const Apply = () => {
               )}
               {currentIndex === 4 && (
                 <Page5
+                  formData={formData}
+                  handleMaritalStatusChange={handleMaritalStatusChange}
+                  handleChange={handleChange}
+                />
+              )}
+              {currentIndex === 5 && (
+                <Page6
+                  formData={formData}
+                  handleMaritalStatusChange={handleMaritalStatusChange}
+                  handleChange={handleChange}
+                />
+              )}
+              {currentIndex === 6 && (
+                <Page7
+                  formData={formData}
+                  handleMaritalStatusChange={handleMaritalStatusChange}
+                  handleChange={handleChange}
+                />
+              )}
+              {currentIndex === 7 && (
+                <Page8
                   formData={formData}
                   handleMaritalStatusChange={handleMaritalStatusChange}
                   handleChange={handleChange}
