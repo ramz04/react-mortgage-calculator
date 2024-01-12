@@ -10,7 +10,12 @@ import {
   FormLabel,
 } from "@mui/material"
 
-function Page2() {
+function Page2({
+  Referee2,
+  handleChangeReferee2,
+  employeeDetails,
+  handleChangeEmploymentDetails,
+}) {
   return (
     <div>
       {/* Referee 2 */}
@@ -20,11 +25,18 @@ function Page2() {
         style={{ marginTop: "40px" }}
         gutterBottom
       >
-        Referee 1 (Not Family member)
+        Referee 2 (Not Family member)
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={3}>
-          <TextField label="Title" variant="standard" fullWidth name="title" />
+          <TextField
+            label="Title"
+            variant="standard"
+            fullWidth
+            name="title"
+            value={Referee2.title}
+            onChange={(e) => handleChangeReferee2("title", e.target.value)}
+          />
         </Grid>
         <Grid item xs={4}>
           <TextField
@@ -32,6 +44,8 @@ function Page2() {
             variant="standard"
             fullWidth
             name="FirstName"
+            value={Referee2.firstName}
+            onChange={(e) => handleChangeReferee2("firstName", e.target.value)}
           />
         </Grid>
         <Grid item xs={4}>
@@ -40,6 +54,8 @@ function Page2() {
             variant="standard"
             fullWidth
             name="Surname"
+            value={Referee2.surName}
+            onChange={(e) => handleChangeReferee2("surName", e.target.value)}
           />
         </Grid>
         <Grid item xs={3}>
@@ -48,6 +64,10 @@ function Page2() {
             variant="standard"
             fullWidth
             name="Relationship"
+            value={Referee2.relationship}
+            onChange={(e) =>
+              handleChangeReferee2("relationship", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={4}>
@@ -56,6 +76,10 @@ function Page2() {
             variant="standard"
             fullWidth
             name="Mobile number"
+            value={Referee2.mobileNumber}
+            onChange={(e) =>
+              handleChangeReferee2("mobileNumber", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={4}>
@@ -66,6 +90,10 @@ function Page2() {
             InputLabelProps={{ shrink: true }}
             type="date"
             name="Date of birth"
+            value={Referee2.dateOfBirth}
+            onChange={(e) =>
+              handleChangeReferee2("dateOfBirth", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={12}>
@@ -79,6 +107,13 @@ function Page2() {
                 variant="standard"
                 fullWidth
                 name="addressLine1"
+                value={Referee2.residentialAddress.addressLine1}
+                onChange={(e) =>
+                  handleChangeReferee2(
+                    "residentialAddress.addressLine1",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
             <Grid item xs={4}>
@@ -87,6 +122,13 @@ function Page2() {
                 variant="standard"
                 fullWidth
                 name="addressLine2"
+                value={Referee2.residentialAddress.addressLine2}
+                onChange={(e) =>
+                  handleChangeReferee2(
+                    "residentialAddress.addressLine2",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
             <Grid item xs={4}>
@@ -95,6 +137,13 @@ function Page2() {
                 variant="standard"
                 fullWidth
                 name="addressLine2"
+                value={Referee2.residentialAddress.nameOfCommunity}
+                onChange={(e) =>
+                  handleChangeReferee2(
+                    "residentialAddress.nameOfCommunity",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
             <Grid item xs={4}>
@@ -103,6 +152,13 @@ function Page2() {
                 variant="standard"
                 fullWidth
                 name="Nearestlandmark"
+                value={Referee2.residentialAddress.nearestLandmark}
+                onChange={(e) =>
+                  handleChangeReferee2(
+                    "residentialAddress.nearestLandmark",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
             <Grid item xs={4}>
@@ -111,6 +167,13 @@ function Page2() {
                 variant="standard"
                 fullWidth
                 name="city"
+                value={Referee2.residentialAddress.city}
+                onChange={(e) =>
+                  handleChangeReferee2(
+                    "residentialAddress.city",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
             <Grid item xs={4}>
@@ -118,8 +181,16 @@ function Page2() {
                 label="Living at address since"
                 variant="standard"
                 type="date"
+                name="livingAtAddressSince"
                 InputLabelProps={{ shrink: true }}
                 fullWidth
+                value={Referee2.residentialAddress.livingAtAddressSince}
+                onChange={(e) =>
+                  handleChangeReferee2(
+                    "residentialAddress.livingAtAddressSince",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
           </Grid>
@@ -137,7 +208,15 @@ function Page2() {
       <Grid item xs={12}>
         <FormControl component="fieldset">
           <FormLabel component="legend">Types of employment</FormLabel>
-          <RadioGroup row aria-label="employmentType" name="employmentType">
+          <RadioGroup
+            row
+            aria-label="employmentType"
+            name="employmentType"
+            value={employeeDetails.employmentType}
+            onChange={(e) =>
+              handleChangeEmploymentDetails("employmentType", e.target.value)
+            }
+          >
             <FormControlLabel
               value="Permanent"
               control={<Radio />}
@@ -186,13 +265,43 @@ function Page2() {
       </Typography>
       <Grid container spacing={1} style={{ marginBottom: "15px" }}>
         <Grid item xs={6}>
-          <TextField label="Employer's name" variant="standard" fullWidth />
+          <TextField
+            label="Employer's name"
+            variant="standard"
+            fullWidth
+            name="employerName"
+            value={employeeDetails.employer.name}
+            onChange={(e) =>
+              handleChangeEmploymentDetails("employer.name", e.target.value)
+            }
+          />
         </Grid>
         <Grid item xs={6}>
-          <TextField label="Industry/sector" variant="standard" fullWidth />
+          <TextField
+            label="Industry/sector"
+            variant="standard"
+            fullWidth
+            name="industrySector"
+            value={employeeDetails.employer.industrySector}
+            onChange={(e) =>
+              handleChangeEmploymentDetails(
+                "employer.industrySector",
+                e.target.value
+              )
+            }
+          />
         </Grid>
         <Grid item xs={12}>
-          <TextField label="Address" variant="standard" fullWidth />
+          <TextField
+            label="Address"
+            variant="standard"
+            fullWidth
+            name="address"
+            value={employeeDetails.employer.address}
+            onChange={(e) =>
+              handleChangeEmploymentDetails("employer.address", e.target.value)
+            }
+          />
         </Grid>
         <Grid item xs={6}>
           <TextField
@@ -200,10 +309,26 @@ function Page2() {
             variant="standard"
             type="number"
             fullWidth
+            name="employerTelephone"
+            value={employeeDetails.employer.telephone}
+            onChange={(e) =>
+              handleChangeEmploymentDetails(
+                "employer.telephone",
+                e.target.value
+              )
+            }
           />
         </Grid>
         <Grid item xs={6}>
-          <TextField label="Town/city" variant="standard" fullWidth />
+          <TextField
+            label="Town/city"
+            variant="standard"
+            fullWidth
+            value={employeeDetails.employer.townCity}
+            onChange={(e) =>
+              handleChangeEmploymentDetails("employer.townCity", e.target.value)
+            }
+          />
         </Grid>
       </Grid>
       <Typography variant="caption" gutterBottom>
@@ -218,6 +343,13 @@ function Page2() {
             InputLabelProps={{ shrink: true }}
             fullWidth
             name="Employment date"
+            value={employeeDetails.employee.employmentDate}
+            onChange={(e) =>
+              handleChangeEmploymentDetails(
+                "employee.employmentDate",
+                e.target.value
+              )
+            }
           />
         </Grid>
         <Grid item xs={4}>
@@ -230,6 +362,13 @@ function Page2() {
             fullWidth
             name="Contract expiry date
 (if applicable)"
+            value={employeeDetails.employee.contractExpiryDate}
+            onChange={(e) =>
+              handleChangeEmploymentDetails(
+                "employee.contractExpiryDate",
+                e.target.value
+              )
+            }
           />
         </Grid>
         <Grid item xs={4}>
@@ -239,6 +378,13 @@ function Page2() {
             variant="standard"
             fullWidth
             name="SSNIT number"
+            value={employeeDetails.employee.ssnitNumber}
+            onChange={(e) =>
+              handleChangeEmploymentDetails(
+                "employee.ssnitNumber",
+                e.target.value
+              )
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -248,6 +394,13 @@ function Page2() {
             variant="standard"
             fullWidth
             name="Telephone number"
+            value={employeeDetails.employee.telephoneNumber}
+            onChange={(e) =>
+              handleChangeEmploymentDetails(
+                "employee.telephoneNumber",
+                e.target.value
+              )
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -256,6 +409,13 @@ function Page2() {
             variant="standard"
             fullWidth
             name="Highest level of education"
+            value={employeeDetails.employee.highestEducation}
+            onChange={(e) =>
+              handleChangeEmploymentDetails(
+                "employee.highestEducation",
+                e.target.value
+              )
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -264,6 +424,13 @@ function Page2() {
             variant="standard"
             fullWidth
             name="Occupation"
+            value={employeeDetails.employee.occupation}
+            onChange={(e) =>
+              handleChangeEmploymentDetails(
+                "employee.occupation",
+                e.target.value
+              )
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -272,6 +439,13 @@ function Page2() {
             variant="standard"
             fullWidth
             name="Designation"
+            value={employeeDetails.employee.designation}
+            onChange={(e) =>
+              handleChangeEmploymentDetails(
+                "employee.designation",
+                e.target.value
+              )
+            }
           />
         </Grid>
         <Grid item xs={4}>
@@ -281,6 +455,13 @@ function Page2() {
             variant="standard"
             fullWidth
             name="Gross monthly salary"
+            value={employeeDetails.employee.grossMonthlySalary}
+            onChange={(e) =>
+              handleChangeEmploymentDetails(
+                "employee.grossMonthlySalary",
+                e.target.value
+              )
+            }
           />
         </Grid>
         <Grid item xs={4}>
@@ -290,6 +471,13 @@ function Page2() {
             variant="standard"
             fullWidth
             name="Net monthly salary"
+            value={employeeDetails.employee.netMonthlySalary}
+            onChange={(e) =>
+              handleChangeEmploymentDetails(
+                "employee.netMonthlySalary",
+                e.target.value
+              )
+            }
           />
         </Grid>
         <Grid item xs={4}>
@@ -299,6 +487,13 @@ function Page2() {
             variant="standard"
             fullWidth
             name="Staff number"
+            value={employeeDetails.employee.staffNumber}
+            onChange={(e) =>
+              handleChangeEmploymentDetails(
+                "employee.staffNumber",
+                e.target.value
+              )
+            }
           />
         </Grid>
       </Grid>

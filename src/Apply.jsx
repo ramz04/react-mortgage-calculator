@@ -48,10 +48,14 @@ const Apply = () => {
     currentResidentialAddress,
     maritalStatusAndDependents,
     referee1,
+    referee2,
+    employmentDetails,
     handleChangePersonalInformation,
     handleChangeResidentialAddress,
     handleChangeMaritalStatus,
     handleChangeReferee1,
+    handleChangeReferee2,
+    handleChangeEmploymentDetail,
   } = useFormStore()
 
   const handleSubmit = (e) => {
@@ -62,6 +66,8 @@ const Apply = () => {
       currentResidentialAddress,
       maritalStatusAndDependents,
       referee1,
+      referee2,
+      employmentDetails,
     })
     goForwards()
   }
@@ -93,7 +99,14 @@ const Apply = () => {
                   handleChangeReferee1={handleChangeReferee1}
                 />
               )}
-              {currentIndex === 1 && <Page2 />}
+              {currentIndex === 1 && (
+                <Page2
+                  Referee2={referee2}
+                  handleChangeReferee2={handleChangeReferee2}
+                  employeeDetails={employmentDetails}
+                  handleChangeEmploymentDetail={handleChangeEmploymentDetail}
+                />
+              )}
               {currentIndex === 2 && <Page3 />}
               {currentIndex === 3 && <Page4 />}
               {currentIndex === 4 && <Page5 />}

@@ -59,6 +59,46 @@ const useFormStore = create((set) => ({
       livingAtAddressSince: "",
     },
   },
+  referee2: {
+    title: "",
+    firstName: "",
+    surName: "",
+    relationship: "",
+    mobileNumber: "",
+    dateOfBirth: "",
+    residentialAddress: {
+      addressLine1: "",
+      addressLine2: "",
+      nameOfCommunity: "",
+      nearestLandmark: "",
+      city: "",
+      livingAtAddressSince: "",
+    },
+  },
+  employmentDetails: {
+    employmentType: "",
+    employer: {
+      name: "",
+      industrySector: "",
+      address: "",
+      telephone: "",
+      townCity: "",
+    },
+    employee: {
+      employmentDate: "",
+      contractExpiryDate: "",
+      ssnitNumber: "",
+      telephoneNumber: "",
+      highestEducation: "",
+      occupation: "",
+      designation: "",
+      grossMonthlySalary: "",
+      netMonthlySalary: "",
+      staffNumber: "",
+    },
+    previousEmployer: "",
+  },
+
   handleChangePersonalInformation: (name, value) =>
     set((state) => ({
       personalInformation: {
@@ -86,6 +126,17 @@ const useFormStore = create((set) => ({
         ...state.referee1,
         [name]: value,
       },
+    })),
+  handleChangeReferee2: (name, value) =>
+    set((state) => ({
+      referee1: {
+        ...state.referee1,
+        [name]: value,
+      },
+    })),
+  handleChangeEmploymentDetails: (name, value) =>
+    set((state) => ({
+      employmentDetails: { ...state.employmentDetails, [name]: value },
     })),
 }))
 
