@@ -98,6 +98,174 @@ const useFormStore = create((set) => ({
     },
     previousEmployer: "",
   },
+  mainAccountDetails: {
+    accountType: {
+      type: "",
+      pleaseSpecify: "",
+    },
+    heldInTheNameOf: "",
+    salaryAccount: "",
+    bankOrFinancialInstitution: "",
+    branchName: "",
+    dateOpened: null,
+    accountNumber: "",
+    branchCode: "",
+  },
+  financialInformation: {
+    rentMortgagePayment: "",
+    vehicleFinancePayment: "",
+    otherVerifiableMonthlyIncome: "",
+    guaranteedBonus: "",
+    otherMonthlyCommitments: "",
+  },
+  unsecuredLoans: {
+    total: "",
+    beenDeclaredInsolent: "",
+    date: "",
+    areYouAGuarantor: "",
+    details: "",
+  },
+  loanApplicationsDetails: {
+    amount: "",
+    loanType: {
+      type: "",
+      pleaseSSpecify: "",
+    },
+    interestRate: "",
+    score: "",
+    baseRate: {
+      min: "",
+      max: "",
+    },
+    Margin: {
+      min: "",
+      max: "",
+    },
+    repaymentMethod: "",
+    termOfLoan: {
+      months: "",
+      repaymentAmount: "",
+    },
+    loanProtectionCover: "",
+    acceptLesserOffer: "",
+    minAmount: "",
+    signature: "",
+  },
+  loanProtectionBenefit: {
+    rate: "",
+    firstPremium: "",
+    oneOffRate: "",
+    firstPremium2L: "",
+    value: "",
+    type: "",
+    details: "",
+    name: "",
+    accountNumber: "",
+    branch: "",
+    customerName: "",
+    signature: "",
+    date: "",
+  },
+  debitAuthorization: {
+    name: "",
+    customerName: "",
+    signature: "",
+    date: "",
+  },
+  customerDeclarationsAndAcceptance: {
+    currentEmployment: "",
+    customer: "",
+    date: "",
+    consultant: "",
+    date2: "",
+  },
+  employerEndorsement: {
+    name: "",
+    companyName: "",
+    endorsedBy: "",
+    officialTitle: "",
+    date: "",
+  },
+  authorizedSignatory: {
+    signature: "",
+    name: "",
+    designation: "",
+    date: "",
+  },
+  witness: {
+    signature: "",
+    name: "",
+    designation: "",
+    date: "",
+  },
+  acceptanceOfTermsAndCondition: {
+    applicantName: "",
+    signature: "",
+    date: "",
+  },
+  handleChangeLoanProtectionBenefit: (name, value) =>
+    set((state) => ({
+      loanProtectionBenefit: {
+        ...state.loanProtectionBenefit,
+        [name]: value,
+      },
+    })),
+  handleChangeDebitAuthorization: (name, value) =>
+    set((state) => ({
+      debitAuthorization: {
+        ...state.debitAuthorization,
+        [name]: value,
+      },
+    })),
+  handleChangeCustomerDeclarationsAndAcceptance: (name, value) =>
+    set((state) => ({
+      customerDeclarationsAndAcceptance: {
+        ...state.customerDeclarationsAndAcceptance,
+        [name]: value,
+      },
+    })),
+  handleChangeEmployerEndorsement: (name, value) =>
+    set((state) => ({
+      employerEndorsement: {
+        ...state.employerEndorsement,
+        [name]: value,
+      },
+    })),
+  handleChangeAuthorizedSignatory: (name, value) =>
+    set((state) => ({
+      authorizedSignatory: {
+        ...state.authorizedSignatory,
+        [name]: value,
+      },
+    })),
+  handleChangeWitness: (name, value) =>
+    set((state) => ({
+      witness: {
+        ...state.witness,
+        [name]: value,
+      },
+    })),
+  handleChangeAcceptanceOfTermsAndCondition: (name, value) =>
+    set((state) => ({
+      acceptanceOfTermsAndCondition: {
+        ...state.acceptanceOfTermsAndCondition,
+        [name]: value,
+      },
+    })),
+  handleChangeLoanApplicationDetails: (name, value) =>
+    set((state) => ({
+      loanApplicationsDetails: {
+        ...state.loanApplicationsDetails,
+        [name]: value,
+      },
+    })),
+  handleChangeUnsecuredLoans: (name, value) =>
+    set((state) => ({
+      UnsecuredLoans: {
+        ...state.unsecuredLoans,
+        [name]: value,
+      },
+    })),
 
   handleChangePersonalInformation: (name, value) =>
     set((state) => ({
@@ -137,6 +305,20 @@ const useFormStore = create((set) => ({
   handleChangeEmploymentDetails: (name, value) =>
     set((state) => ({
       employmentDetails: { ...state.employmentDetails, [name]: value },
+    })),
+  handleChangeMainAccountDetails: (name, value) =>
+    set((state) => ({
+      mainAccountDetails: {
+        ...state.mainAccountDetails,
+        [name]: value,
+      },
+    })),
+  handleChangeFinancialInformation: (name, value) =>
+    set((state) => ({
+      financialInformation: {
+        ...state.financialInformation,
+        [name]: value,
+      },
     })),
 }))
 

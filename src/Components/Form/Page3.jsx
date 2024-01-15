@@ -1,7 +1,17 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { TextField, Typography, Grid } from "@mui/material"
 
-export default function Page3({ formData, handleChange }) {
+export default function Page3({
+  employerEndorsement,
+  handleChangeEmployerEndorsement,
+  customerDeclarationsAndAcceptance,
+  handleChangeCustomerDeclarations,
+  handleChangeDebitAuthorization,
+  handleChangeLoanProtectionBenefit,
+  debitAuthorization,
+  loanProtectionBenefit,
+}) {
   return (
     <div>
       {/* Loan protection benefit - Stanbic Transactional account holder (official use) */}
@@ -24,9 +34,12 @@ export default function Page3({ formData, handleChange }) {
         <TextField
           variant="standard"
           size="small"
-          value={FormData.premiumRate}
-          onChange={FormData.handlePremiumRateChange}
           style={{ width: "150px" }}
+          name="rate"
+          value={loanProtectionBenefit.rate}
+          onChange={(e) =>
+            handleChangeLoanProtectionBenefit("rate", e.target.value)
+          }
         />
         {"   "}
         and forms part of the monthly loan repayment.
@@ -36,9 +49,12 @@ export default function Page3({ formData, handleChange }) {
         <TextField
           variant="standard"
           size="small"
-          value={FormData.premiumRate}
-          onChange={FormData.handlePremiumRateChange}
           style={{ width: "500px" }}
+          name="firstPremium"
+          value={loanProtectionBenefit.firstPremium}
+          onChange={(e) =>
+            handleChangeLoanProtectionBenefit("firstPremium", e.target.value)
+          }
         />
       </Typography>
       {/* Loan protection benefit - Direct payroll deduction customer (official use) */}
@@ -62,9 +78,12 @@ export default function Page3({ formData, handleChange }) {
         <TextField
           variant="standard"
           size="small"
-          value={FormData.premiumRate}
-          onChange={FormData.handlePremiumRateChange}
           style={{ width: "150px" }}
+          name="oneOffRate"
+          value={loanProtectionBenefit.oneOffRate}
+          onChange={(e) =>
+            handleChangeLoanProtectionBenefit("oneOffRate", e.target.value)
+          }
         />
         {"   "}% would be deducted upfront from the approved loan amount.
       </Typography>
@@ -73,9 +92,12 @@ export default function Page3({ formData, handleChange }) {
         <TextField
           variant="standard"
           size="small"
-          value={FormData.premiumRate}
-          onChange={FormData.handlePremiumRateChange}
           style={{ width: "500px" }}
+          name="firstPremium2"
+          value={loanProtectionBenefit.firstPremium2}
+          onChange={(e) =>
+            handleChangeLoanProtectionBenefit("firstPremium2", e.target.value)
+          }
         />
       </Typography>
       <Typography variant="subtitle1" color="secondary" gutterBottom>
@@ -97,9 +119,11 @@ export default function Page3({ formData, handleChange }) {
             label="Value"
             variant="standard"
             fullWidth
-            name="Value"
-            value={formData.Value}
-            onChange={handleChange}
+            name="value"
+            value={loanProtectionBenefit.value}
+            onChange={(e) =>
+              handleChangeLoanProtectionBenefit("value", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -107,9 +131,11 @@ export default function Page3({ formData, handleChange }) {
             label="Type"
             variant="standard"
             fullWidth
-            name="Type"
-            value={formData.Type}
-            onChange={handleChange}
+            name="type"
+            value={loanProtectionBenefit.type}
+            onChange={(e) =>
+              handleChangeLoanProtectionBenefit("type", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={12}>
@@ -117,9 +143,11 @@ export default function Page3({ formData, handleChange }) {
             label="Details"
             variant="standard"
             fullWidth
-            name="Details"
-            value={formData.Details}
-            onChange={handleChange}
+            name="details"
+            value={loanProtectionBenefit.details}
+            onChange={(e) =>
+              handleChangeLoanProtectionBenefit("details", e.target.value)
+            }
           />
         </Grid>
       </Grid>
@@ -138,9 +166,11 @@ export default function Page3({ formData, handleChange }) {
         <TextField
           variant="standard"
           size="small"
-          value={FormData.premiumRate}
-          onChange={FormData.handlePremiumRateChange}
-          style={{ width: "94%" }}
+          name="name"
+          value={loanProtectionBenefit.name}
+          onChange={(e) =>
+            handleChangeLoanProtectionBenefit("name", e.target.value)
+          }
         />
         {"      "} hereby
       </Typography>
@@ -149,9 +179,11 @@ export default function Page3({ formData, handleChange }) {
         <TextField
           variant="standard"
           size="small"
-          value={FormData.premiumRate}
-          onChange={FormData.handlePremiumRateChange}
-          style={{ width: "60%" }}
+          name="accountNumber"
+          value={loanProtectionBenefit.accountNumber}
+          onChange={(e) =>
+            handleChangeLoanProtectionBenefit("accountNumber", e.target.value)
+          }
         />
       </Typography>
       <Typography variant="body1" paragraph>
@@ -159,8 +191,11 @@ export default function Page3({ formData, handleChange }) {
         <TextField
           variant="standard"
           size="small"
-          value={FormData.premiumRate}
-          onChange={FormData.handlePremiumRateChange}
+          name="branch"
+          value={loanProtectionBenefit.branch}
+          onChange={(e) =>
+            handleChangeLoanProtectionBenefit("branch", e.target.value)
+          }
           style={{ width: "350px" }}
         />
         {"   "}
@@ -173,9 +208,11 @@ export default function Page3({ formData, handleChange }) {
             label="Customer name"
             variant="standard"
             fullWidth
-            name="Customer name"
-            value={formData.CustomerName}
-            onChange={handleChange}
+            name="customrName"
+            value={loanProtectionBenefit.customerName}
+            onChange={(e) =>
+              handleChangeLoanProtectionBenefit("customerName", e.target.value)
+            }
           />
         </Grid>
 
@@ -185,8 +222,10 @@ export default function Page3({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Signature"
-            value={formData.Signature}
-            onChange={handleChange}
+            value={loanProtectionBenefit.signature}
+            onChange={(e) =>
+              handleChangeLoanProtectionBenefit("signature", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={4}>
@@ -197,8 +236,10 @@ export default function Page3({ formData, handleChange }) {
             InputLabelProps={{ shrink: true }}
             fullWidth
             name="Date"
-            value={formData.Date}
-            onChange={handleChange}
+            value={loanProtectionBenefit.date}
+            onChange={(e) =>
+              handleChangeLoanProtectionBenefit("date", e.target.value)
+            }
           />
         </Grid>
       </Grid>
@@ -221,8 +262,14 @@ export default function Page3({ formData, handleChange }) {
         <TextField
           variant="standard"
           size="small"
-          value={FormData.premiumRate}
-          onChange={FormData.handlePremiumRateChange}
+          name="currentEmployment"
+          value={customerDeclarationsAndAcceptance.currentEmployment}
+          onChange={(e) =>
+            handleChangeCustomerDeclarations(
+              "currentEmployment",
+              e.target.value
+            )
+          }
           style={{ width: "40%" }}
         />
         {"   "}ceases. I further confirm that the general terms and conditions
@@ -241,8 +288,10 @@ export default function Page3({ formData, handleChange }) {
             variant="standard"
             fullWidth
             name="Customer"
-            value={formData.Customer}
-            onChange={handleChange}
+            value={customerDeclarationsAndAcceptance.customer}
+            onChange={(e) =>
+              handleChangeCustomerDeclarations("customer", e.target.value)
+            }
           />
         </Grid>
 
@@ -254,8 +303,10 @@ export default function Page3({ formData, handleChange }) {
             InputLabelProps={{ shrink: true }}
             fullWidth
             name="Date"
-            value={formData.Date}
-            onChange={handleChange}
+            value={customerDeclarationsAndAcceptance.date}
+            onChange={(e) =>
+              handleChangeCustomerDeclarations("date", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -266,8 +317,10 @@ consultant on behalf of Stanbic Bank Ghana Ltd"
             fullWidth
             name="Customer consultant/Personal Solution
 consultant on behalf of Stanbic Bank Ghana Ltd"
-            value={formData.consultant}
-            onChange={handleChange}
+            value={customerDeclarationsAndAcceptance.consultant}
+            onChange={(e) =>
+              handleChangeCustomerDeclarations("consultant", e.target.value)
+            }
           />
         </Grid>
 
@@ -279,8 +332,10 @@ consultant on behalf of Stanbic Bank Ghana Ltd"
             InputLabelProps={{ shrink: true }}
             fullWidth
             name="Date"
-            value={formData.Date}
-            onChange={handleChange}
+            value={customerDeclarationsAndAcceptance.date2}
+            onChange={(e) =>
+              handleChangeCustomerDeclarations("date2", e.target.value)
+            }
           />
         </Grid>
       </Grid>
@@ -299,9 +354,12 @@ consultant on behalf of Stanbic Bank Ghana Ltd"
         <TextField
           variant="standard"
           size="small"
-          value={FormData.premiumRate}
-          onChange={FormData.handlePremiumRateChange}
+          name="name"
           style={{ width: "58%" }}
+          value={employerEndorsement.name}
+          onChange={(e) =>
+            handleChangeEmployerEndorsement("name", e.target.value)
+          }
         />
         {"   "}
         an employee of
@@ -309,8 +367,11 @@ consultant on behalf of Stanbic Bank Ghana Ltd"
         <TextField
           variant="standard"
           size="small"
-          value={FormData.premiumRate}
-          onChange={FormData.handlePremiumRateChange}
+          name="companyName"
+          value={employerEndorsement.companyName}
+          onChange={(e) =>
+            handleChangeEmployerEndorsement("companyName", e.target.value)
+          }
           style={{ width: "74%" }}
         />
         {"   "}
@@ -324,8 +385,10 @@ consultant on behalf of Stanbic Bank Ghana Ltd"
             variant="standard"
             fullWidth
             name="Endorsed by"
-            value={formData.EndorsedBy}
-            onChange={handleChange}
+            value={employerEndorsement.endorsedBy}
+            onChange={(e) =>
+              handleChangeEmployerEndorsement("endorsedBy", e.target.value)
+            }
           />
         </Grid>
 
@@ -335,8 +398,10 @@ consultant on behalf of Stanbic Bank Ghana Ltd"
             variant="standard"
             fullWidth
             name="Official title"
-            value={formData.title}
-            onChange={handleChange}
+            value={employerEndorsement.officialTitle}
+            onChange={(e) =>
+              handleChangeEmployerEndorsement("officialTitle", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -345,8 +410,10 @@ consultant on behalf of Stanbic Bank Ghana Ltd"
             variant="standard"
             fullWidth
             name="Signature"
-            value={formData.Signature}
-            onChange={handleChange}
+            value={employerEndorsement.signature}
+            onChange={(e) =>
+              handleChangeEmployerEndorsement("signature", e.target.value)
+            }
           />
         </Grid>
 
@@ -358,8 +425,10 @@ consultant on behalf of Stanbic Bank Ghana Ltd"
             InputLabelProps={{ shrink: true }}
             fullWidth
             name="Date"
-            value={formData.Date}
-            onChange={handleChange}
+            value={employerEndorsement.date}
+            onChange={(e) =>
+              handleChangeEmployerEndorsement("date", e.target.value)
+            }
           />
         </Grid>
       </Grid>

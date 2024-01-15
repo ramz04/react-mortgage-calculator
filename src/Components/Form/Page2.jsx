@@ -14,7 +14,15 @@ function Page2({
   Referee2,
   handleChangeReferee2,
   employeeDetails,
+  financialInformation,
+  handleChangeFinancialInformation,
   handleChangeEmploymentDetails,
+  handleChangeMainAccountDetails,
+  mainAccountDetails,
+  handleChangeUnsecuredLoans,
+  unsecuredLoans,
+  loanApplicationsDetails,
+  handleChangeLoanApplicationDetails,
 }) {
   return (
     <div>
@@ -212,9 +220,12 @@ function Page2({
             row
             aria-label="employmentType"
             name="employmentType"
-            value={employeeDetails.employmentType}
+            value={financialInformation.rentMortgagePayment}
             onChange={(e) =>
-              handleChangeEmploymentDetails("employmentType", e.target.value)
+              handleChangeEmploymentDetails(
+                "rentMortgagePayment",
+                e.target.value
+              )
             }
           >
             <FormControlLabel
@@ -508,6 +519,10 @@ function Page2({
           name="employmentPeriod"
           placeholder="Start Date - End Date"
           helperText="Enter the period in the format 'Start Date - End Date'"
+          value={employeeDetails.previousEmployer}
+          onChange={(e) =>
+            handleChangeEmploymentDetails("previousEmployer", e.target.value)
+          }
         />
       </Grid>
       {/* Main banking account details */}
@@ -524,7 +539,18 @@ function Page2({
           <FormLabel component="legend">Account Type</FormLabel>
           <Grid container spacing={0}>
             <Grid item xs={8}>
-              <RadioGroup row aria-label="accountType" name="accountType">
+              <RadioGroup
+                row
+                aria-label="accountType"
+                name="accountType"
+                value={mainAccountDetails.accountType.type}
+                onChange={(e) =>
+                  handleChangeMainAccountDetails(
+                    "accountType.type",
+                    e.target.value
+                  )
+                }
+              >
                 <FormControlLabel
                   value="Cheque/Current"
                   control={<Radio />}
@@ -548,6 +574,13 @@ function Page2({
                 variant="standard"
                 fullWidth
                 name="pleaseSpecify"
+                value={mainAccountDetails.accountType.pleaseSpecify}
+                onChange={(e) =>
+                  handleChangeMainAccountDetails(
+                    "accountType.pleaseSpecify",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
           </Grid>
@@ -561,6 +594,13 @@ function Page2({
               variant="standard"
               fullWidth
               name="heldInTheNameOf"
+              value={mainAccountDetails.heldInTheNameOf}
+              onChange={(e) =>
+                handleChangeMainAccountDetails(
+                  "heldInTheNameOf",
+                  e.target.value
+                )
+              }
             />
           </Grid>
           <Grid item xs={6}>
@@ -568,7 +608,18 @@ function Page2({
               <FormLabel component="legend">
                 Transactional account/Salary account
               </FormLabel>
-              <RadioGroup row aria-label="SalaryAccount" name="salaryAccount">
+              <RadioGroup
+                row
+                aria-label="SalaryAccount"
+                name="salaryAccount "
+                value={mainAccountDetails.salaryAccount}
+                onChange={(e) =>
+                  handleChangeMainAccountDetails(
+                    " salaryAccount",
+                    e.target.value
+                  )
+                }
+              >
                 <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
                 <FormControlLabel value="No" control={<Radio />} label="No" />
               </RadioGroup>
@@ -583,6 +634,13 @@ function Page2({
             variant="standard"
             fullWidth
             name="Bank or financial institution"
+            value={mainAccountDetails.bankOrFinancialInstitution}
+            onChange={(e) =>
+              handleChangeMainAccountDetails(
+                "bankOrFinancialInstitution",
+                e.target.value
+              )
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -591,6 +649,10 @@ function Page2({
             variant="standard"
             fullWidth
             name="Branch name"
+            value={mainAccountDetails.branchName}
+            onChange={(e) =>
+              handleChangeMainAccountDetails("branchName", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -601,6 +663,10 @@ function Page2({
             InputLabelProps={{ shrink: true }}
             fullWidth
             name="Date opened [bank use]"
+            value={mainAccountDetails.dateOpened}
+            onChange={(e) =>
+              handleChangeMainAccountDetails("dateOpened", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -610,6 +676,10 @@ function Page2({
             type="number"
             fullWidth
             name="Account number"
+            value={mainAccountDetails.accountNumber}
+            onChange={(e) =>
+              handleChangeMainAccountDetails("accountNumber", e.target.value)
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -619,10 +689,14 @@ function Page2({
             type="number"
             fullWidth
             name="Branch code"
+            value={mainAccountDetails.branchCode}
+            onChange={(e) =>
+              handleChangeMainAccountDetails("branchCode", e.target.value)
+            }
           />
         </Grid>
       </Grid>
-      {/* Main banking account details */}
+      {/* Financial information */}
       <Typography
         variant="h6"
         color="primary"
@@ -636,6 +710,13 @@ function Page2({
           <TextField
             label="Rent/mortgage payment"
             variant="standard"
+            value={financialInformation.rentMortgagePayment}
+            onChange={(e) =>
+              handleChangeFinancialInformation(
+                "rentMortgagePayment",
+                e.target.value
+              )
+            }
             fullWidth
             name="Rent/mortgage payment"
           />
@@ -646,6 +727,13 @@ function Page2({
             variant="standard"
             fullWidth
             name="Vehicle finance payment"
+            value={financialInformation.vehicleFinancePayment}
+            onChange={(e) =>
+              handleChangeFinancialInformation(
+                "vehicleFinancePayment",
+                e.target.value
+              )
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -654,6 +742,13 @@ function Page2({
             variant="standard"
             fullWidth
             name="Other verifiable monthly income"
+            value={financialInformation.otherVerifiableMonthlyIncome}
+            onChange={(e) =>
+              handleChangeFinancialInformation(
+                "otherVerifiableMonthlyIncome",
+                e.target.value
+              )
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -662,6 +757,13 @@ function Page2({
             variant="standard"
             fullWidth
             name="Other debt payments"
+            value={financialInformation.otherMonthlyCommitments}
+            onChange={(e) =>
+              handleChangeFinancialInformation(
+                "otherMonthlyCommitments",
+                e.target.value
+              )
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -672,6 +774,13 @@ function Page2({
             fullWidth
             name="Guaranteed bonus/13th cheque
 (if applicable)"
+            value={financialInformation.guaranteedBonus}
+            onChange={(e) =>
+              handleChangeFinancialInformation(
+                "guaranteedBonus",
+                e.target.value
+              )
+            }
           />
         </Grid>
         <Grid item xs={6}>
@@ -680,6 +789,13 @@ function Page2({
             variant="standard"
             fullWidth
             name="Other monthly commitments"
+            value={financialInformation.otherMonthlyCommitments}
+            onChange={(e) =>
+              handleChangeFinancialInformation(
+                "otherMonthlyCommitments",
+                e.target.value
+              )
+            }
           />
         </Grid>
       </Grid>
@@ -694,7 +810,16 @@ function Page2({
       </Typography>
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          <TextField label="Total" variant="standard" fullWidth name="Total" />
+          <TextField
+            label="Total"
+            variant="standard"
+            fullWidth
+            name="Total"
+            value={unsecuredLoans.total}
+            onChange={(e) =>
+              handleChangeUnsecuredLoans("total", e.target.value)
+            }
+          />
         </Grid>
       </Grid>
       <Grid container spacing={1} style={{ marginTop: "15px" }}>
@@ -703,7 +828,18 @@ function Page2({
             <FormLabel component="legend">
               Have you been declared insolvent in the last ten years?
             </FormLabel>
-            <RadioGroup row aria-label="insolent" name="insolent">
+            <RadioGroup
+              row
+              aria-label="insolent"
+              name="insolent"
+              value={unsecuredLoans.beenDeclaredInsolent}
+              onChange={(e) =>
+                handleChangeUnsecuredLoans(
+                  "beenDeclaredInsolent",
+                  e.target.value
+                )
+              }
+            >
               <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
               <FormControlLabel value="No" control={<Radio />} label="No" />
             </RadioGroup>
@@ -717,6 +853,8 @@ function Page2({
             fullWidth
             InputLabelProps={{ shrink: true }}
             name="If yes, rehabilitation date"
+            value={unsecuredLoans.date}
+            onChange={(e) => handleChangeUnsecuredLoans("date", e.target.value)}
           />
         </Grid>
       </Grid>
@@ -726,7 +864,15 @@ function Page2({
             <FormLabel component="legend">
               Are you a guarantor/surety for anybody or anything else?
             </FormLabel>
-            <RadioGroup row aria-label="guarantor" name="guarantor">
+            <RadioGroup
+              row
+              aria-label="guarantor"
+              name="guarantor"
+              value={unsecuredLoans.areYouAGuarantor}
+              onChange={(e) =>
+                handleChangeUnsecuredLoans("areYouAGuarantor", e.target.value)
+              }
+            >
               <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
               <FormControlLabel value="No" control={<Radio />} label="No" />
             </RadioGroup>
@@ -740,6 +886,10 @@ details of guarantee"
             fullWidth
             name="If yes, please give
 details of guarantee"
+            value={unsecuredLoans.details}
+            onChange={(e) =>
+              handleChangeUnsecuredLoans("details", e.target.value)
+            }
           />
         </Grid>
       </Grid>
@@ -761,6 +911,10 @@ details of guarantee"
             type="number"
             fullWidth
             name="Loan amount applied for"
+            value={loanApplicationsDetails.amount}
+            onChange={(e) =>
+              handleChangeLoanApplicationDetails("amount", e.target.value)
+            }
           />
         </Grid>
       </Grid>
@@ -769,7 +923,18 @@ details of guarantee"
           <FormLabel component="legend">Loan Type</FormLabel>
           <Grid container spacing={0}>
             <Grid item xs={8}>
-              <RadioGroup row aria-label="loanType" name="loanType">
+              <RadioGroup
+                row
+                aria-label="loanType"
+                name="loanType"
+                value={loanApplicationsDetails.loanType.type}
+                onChange={(e) =>
+                  handleChangeLoanApplicationDetails(
+                    "loanType.type",
+                    e.target.value
+                  )
+                }
+              >
                 <FormControlLabel
                   value="Fixed term loan"
                   control={<Radio />}
@@ -808,6 +973,13 @@ details of guarantee"
                 variant="standard"
                 fullWidth
                 name="pleaseSpecify"
+                value={loanApplicationsDetails.loanType.pleaseSpecify}
+                onChange={(e) =>
+                  handleChangeLoanApplicationDetails(
+                    "loanType.pleaseSpecify",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
           </Grid>
@@ -817,7 +989,18 @@ details of guarantee"
         <Grid item xs={3}>
           <FormControl component="fieldset" style={{ marginTop: "16px" }}>
             <FormLabel component="legend">Interest rate</FormLabel>
-            <RadioGroup row aria-label="interestRate" name="interestRate">
+            <RadioGroup
+              row
+              aria-label="interestRate"
+              name="interestRate"
+              value={loanApplicationsDetails.interestRate}
+              onChange={(e) =>
+                handleChangeLoanApplicationDetails(
+                  "interestRate",
+                  e.target.value
+                )
+              }
+            >
               <FormControlLabel
                 value="Fixed"
                 control={<Radio />}
@@ -832,7 +1015,16 @@ details of guarantee"
           </FormControl>
         </Grid>
         <Grid item xs={3}>
-          <TextField label="Score" variant="standard" fullWidth name="Score" />
+          <TextField
+            label="Score"
+            variant="standard"
+            fullWidth
+            name="Score"
+            value={loanApplicationsDetails.score}
+            onChange={(e) =>
+              handleChangeLoanApplicationDetails("score", e.target.value)
+            }
+          />
         </Grid>
         <Grid item xs={3}>
           <Grid container spacing={1} alignItems="center">
@@ -840,7 +1032,18 @@ details of guarantee"
               Base rate
             </Typography>
             <Grid item xs={2}>
-              <TextField variant="standard" fullWidth name="min" />
+              <TextField
+                variant="standard"
+                fullWidth
+                name="min"
+                value={loanApplicationsDetails.baseRate.min}
+                onChange={(e) =>
+                  handleChangeLoanApplicationDetails(
+                    "baseRate.min",
+                    e.target.value
+                  )
+                }
+              />
             </Grid>
             <Grid item xs={1}>
               <Typography variant="h6" align="center">
@@ -848,7 +1051,18 @@ details of guarantee"
               </Typography>
             </Grid>
             <Grid item xs={2}>
-              <TextField variant="standard" fullWidth name="max" />
+              <TextField
+                variant="standard"
+                fullWidth
+                name="max"
+                value={loanApplicationsDetails.baseRate.max}
+                onChange={(e) =>
+                  handleChangeLoanApplicationDetails(
+                    "baseRate.max",
+                    e.target.value
+                  )
+                }
+              />
             </Grid>
           </Grid>
         </Grid>
@@ -858,7 +1072,18 @@ details of guarantee"
               Margin
             </Typography>
             <Grid item xs={2}>
-              <TextField variant="standard" fullWidth name="min" />
+              <TextField
+                variant="standard"
+                fullWidth
+                name="min"
+                value={loanApplicationsDetails.Margin.min}
+                onChange={(e) =>
+                  handleChangeLoanApplicationDetails(
+                    "Margin.min",
+                    e.target.value
+                  )
+                }
+              />
             </Grid>
             <Grid item xs={1}>
               <Typography variant="h6" align="center">
@@ -866,7 +1091,18 @@ details of guarantee"
               </Typography>
             </Grid>
             <Grid item xs={2}>
-              <TextField variant="standard" fullWidth name="max" />
+              <TextField
+                variant="standard"
+                fullWidth
+                name="max"
+                value={loanApplicationsDetails.Margin.max}
+                onChange={(e) =>
+                  handleChangeLoanApplicationDetails(
+                    "Margin.max",
+                    e.target.value
+                  )
+                }
+              />
             </Grid>
           </Grid>
         </Grid>
@@ -879,6 +1115,13 @@ details of guarantee"
                   row
                   aria-label="Repayment method"
                   name="Repayment method"
+                  value={loanApplicationsDetails.repaymentMethod}
+                  onChange={(e) =>
+                    handleChangeLoanApplicationDetails(
+                      "repaymentMethod",
+                      e.target.value
+                    )
+                  }
                 >
                   <FormControlLabel
                     value="Direct payroll deduction"
@@ -922,6 +1165,13 @@ details of guarantee"
                 type="number"
                 fullWidth
                 name="Months"
+                value={loanApplicationsDetails.termOfLoan.months}
+                onChange={(e) =>
+                  handleChangeLoanApplicationDetails(
+                    "termOfLoan.months",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
             <Grid item xs={6}>
@@ -931,6 +1181,13 @@ details of guarantee"
                 type="number"
                 fullWidth
                 name="Repayment amount"
+                value={loanApplicationsDetails.termOfLoan.repaymentAmount}
+                onChange={(e) =>
+                  handleChangeLoanApplicationDetails(
+                    "termOfLoan.repaymentAmount",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
           </Grid>
@@ -946,6 +1203,13 @@ details of guarantee"
               row
               aria-label="LoanProtectionCover"
               name="LoanProtectionCover"
+              value={loanApplicationsDetails.loanProtectionCover}
+              onChange={(e) =>
+                handleChangeLoanApplicationDetails(
+                  "loanProtectionCover",
+                  e.target.value
+                )
+              }
             >
               <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
               <FormControlLabel value="No" control={<Radio />} label="No" />
@@ -965,6 +1229,13 @@ details of guarantee"
                   row
                   aria-label="AcceptLesserOffer"
                   name="AcceptLesserOffer"
+                  value={loanApplicationsDetails.acceptLesserOffer}
+                  onChange={(e) =>
+                    handleChangeLoanApplicationDetails(
+                      "acceptLesserOffer",
+                      e.target.value
+                    )
+                  }
                 >
                   <FormControlLabel
                     value="Yes"
@@ -982,6 +1253,13 @@ details of guarantee"
                 type="number"
                 fullWidth
                 name="Minimum amount"
+                value={loanApplicationsDetails.minAmount}
+                onChange={(e) =>
+                  handleChangeLoanApplicationDetails(
+                    "minAmount",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
             <Grid item xs={4}>
@@ -991,6 +1269,13 @@ details of guarantee"
                 type="number"
                 fullWidth
                 name="Signature"
+                value={loanApplicationsDetails.signature}
+                onChange={(e) =>
+                  handleChangeLoanApplicationDetails(
+                    "signature",
+                    e.target.value
+                  )
+                }
               />
             </Grid>
           </Grid>
