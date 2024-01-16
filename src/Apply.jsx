@@ -7,6 +7,7 @@ import CssBaseline from "@mui/material/CssBaseline"
 import { createTheme } from "@mui/material/styles"
 import useMultiForm from "./hooks/useMultiForm"
 import { Stack } from "@mui/material"
+import axios from "axios"
 import {
   Container,
   Paper,
@@ -83,13 +84,41 @@ const Apply = () => {
     loanProtectionBenefit,
   } = useFormStore()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+
+    const formData = {
+      personalInformation,
+      currentResidentialAddress,
+      maritalStatusAndDependents,
+      referee1,
+      referee2,
+      employmentDetails,
+      mainAccountDetails,
+      financialInformation,
+      unsecuredLoans,
+      loanApplicationsDetails,
+      loanProtectionBenefit,
+      debitAuthorization,
+      customerDeclarationsAndAcceptance,
+      employerEndorsement,
+      authorizedSignatory,
+      witness,
+      acceptanceOfTermsAndCondition,
+    }
     // Add logic to submit the form data (e.g., send to server)
     if (!isLastStep) {
       goForwards()
     } else {
       navigate("/confirmation")
+      try {
+        const response = await axios.post("http://localhost:3000", formData)
+        console.log("Server response:", response.data)
+        // Handle success, e.g., show a success message or redirect the user
+      } catch (error) {
+        console.error("Error submitting form:", error)
+        // Handle error, e.g., show an error message to the user
+      }
 
       console.log("Form data submitted:", {
         personalInformation,
