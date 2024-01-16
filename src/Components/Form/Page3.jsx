@@ -167,6 +167,7 @@ export default function Page3({
           variant="standard"
           size="small"
           name="name"
+          style={{ width: "93%" }}
           value={loanProtectionBenefit.name}
           onChange={(e) =>
             handleChangeLoanProtectionBenefit("name", e.target.value)
@@ -180,6 +181,7 @@ export default function Page3({
           variant="standard"
           size="small"
           name="accountNumber"
+          style={{ width: "60%" }}
           value={loanProtectionBenefit.accountNumber}
           onChange={(e) =>
             handleChangeLoanProtectionBenefit("accountNumber", e.target.value)
@@ -208,7 +210,7 @@ export default function Page3({
             label="Customer name"
             variant="standard"
             fullWidth
-            name="customrName"
+            name="customerName"
             value={loanProtectionBenefit.customerName}
             onChange={(e) =>
               handleChangeLoanProtectionBenefit("customerName", e.target.value)
@@ -239,6 +241,77 @@ export default function Page3({
             value={loanProtectionBenefit.date}
             onChange={(e) =>
               handleChangeLoanProtectionBenefit("date", e.target.value)
+            }
+          />
+        </Grid>
+      </Grid>
+      {/* Debit authorisation (Direct payroll deduction customer) - where applicable */}
+      <Typography
+        variant="h6"
+        color="primary"
+        style={{ marginTop: "40px" }}
+        gutterBottom
+      >
+        Debit authorisation (Direct payroll deduction customer) - where
+        applicable
+      </Typography>
+      <Typography variant="body1" paragraph>
+        I {"   "}
+        <TextField
+          variant="standard"
+          size="small"
+          name="name"
+          style={{ width: "93%" }}
+          value={debitAuthorization.name}
+          onChange={(e) =>
+            handleChangeDebitAuthorization("name", e.target.value)
+          }
+        />
+        {"      "} hereby
+      </Typography>
+      <Typography variant="body1" paragraph>
+        authorise my employer to deduct the monthly repayments for this facility
+        if approved, direct from my salary and paid to Stanbic Bank Ghana
+        Limited towards the repayment of my loan facility until the debt is
+        fully paid.
+      </Typography>
+      <Grid container spacing={3}>
+        <Grid item xs={4}>
+          <TextField
+            label="Customer name"
+            variant="standard"
+            fullWidth
+            name="customerName"
+            value={debitAuthorization.customerName}
+            onChange={(e) =>
+              handleChangeDebitAuthorization("customerName", e.target.value)
+            }
+          />
+        </Grid>
+
+        <Grid item xs={4}>
+          <TextField
+            label="Signature"
+            variant="standard"
+            fullWidth
+            name="Signature"
+            value={debitAuthorization.signature}
+            onChange={(e) =>
+              handleChangeDebitAuthorization("signature", e.target.value)
+            }
+          />
+        </Grid>
+        <Grid item xs={4}>
+          <TextField
+            label="Date"
+            type="date"
+            variant="standard"
+            InputLabelProps={{ shrink: true }}
+            fullWidth
+            name="Date"
+            value={debitAuthorization.date}
+            onChange={(e) =>
+              handleChangeDebitAuthorization("date", e.target.value)
             }
           />
         </Grid>

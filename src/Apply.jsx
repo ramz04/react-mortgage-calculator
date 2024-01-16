@@ -19,8 +19,8 @@ import Page3 from "./Components/Form/Page3"
 import Page4 from "./Components/Form/Page4"
 import Page5 from "./Components/Form/Page5"
 import Page6 from "./Components/Form/Page6"
-import Page7 from "./Components/Form/Page7"
-import Page8 from "./Components/Form/Page8"
+// import Page7 from "./Components/Form/Page7"
+// import Page8 from "./Components/Form/Page8"
 import useFormStore from "./state"
 
 const MyPaper = styled(Paper)({
@@ -35,7 +35,7 @@ const Apply = () => {
   const { darkMode, toggleDarkMode } = useThemeStore()
 
   const { currentIndex, goBackwards, goForwards, isFirstStep, isLastStep } =
-    useMultiForm(8)
+    useMultiForm(7)
 
   const theme = createTheme({
     palette: {
@@ -195,8 +195,8 @@ const Apply = () => {
                   }
                 />
               )}
-              {currentIndex === 6 && <Page7 />}
-              {currentIndex === 7 && <Page8 />}
+              {/* {currentIndex === 6 && <Page7 />}
+              {currentIndex === 7 && <Page8 />} */}
               {/* Submit Button */}
               <Box
                 sx={{

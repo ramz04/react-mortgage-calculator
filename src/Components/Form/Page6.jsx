@@ -1,9 +1,13 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React from "react"
 import { Typography, Grid, TextField } from "@mui/material"
 
-function Page6() {
+function Page6({
+  handleChangeAcceptanceOfTermsAndCondition,
+  acceptanceOfTermsAndCondition,
+}) {
   return (
     <div>
       <Grid container spacing={4}>
@@ -238,12 +242,41 @@ function Page6() {
             and I agree to be bound by them. I further confirm that a copy of
             the facility terms and conditions have been given to me.
           </Typography>
-          <TextField label="Applicant’s name" variant="standard" fullWidth />
-          <TextField label="Signature" variant="standard" fullWidth />
+          <TextField
+            label="Applicant’s name"
+            variant="standard"
+            fullWidth
+            name="applicantName"
+            value={acceptanceOfTermsAndCondition.applicantName}
+            onChange={(e) =>
+              handleChangeAcceptanceOfTermsAndCondition(
+                "applicantName",
+                e.target.value
+              )
+            }
+          />
+          <TextField
+            label="Signature"
+            variant="standard"
+            fullWidth
+            value={acceptanceOfTermsAndCondition.signature}
+            name="signature"
+            onChange={(e) =>
+              handleChangeAcceptanceOfTermsAndCondition(
+                "signature",
+                e.target.value
+              )
+            }
+          />
           <TextField
             label="Date"
             type="date"
             variant="standard"
+            name="date"
+            value={acceptanceOfTermsAndCondition.date}
+            onChange={(e) =>
+              handleChangeAcceptanceOfTermsAndCondition("date", e.target.value)
+            }
             InputLabelProps={{ shrink: true }}
             fullWidth
           />

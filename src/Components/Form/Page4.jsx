@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from "react"
 import {
@@ -13,7 +14,12 @@ const listItemStyle = {
   marginBottom: "8px",
 }
 
-export default function Page4() {
+export default function Page4({
+  witness,
+  authorizedSignatory,
+  handleChangeWitness,
+  handleChangeAuthorizedSignatory,
+}) {
   return (
     <div>
       {/*Credit Reference Bureau Consent clause */}
@@ -132,15 +138,47 @@ export default function Page4() {
           <Typography variant="subtitle1" color="secondary">
             1 Authorized Signatory
           </Typography>
-          <TextField label="Signature" variant="standard" fullWidth />
-          <TextField label="Name" variant="standard" fullWidth />
-          <TextField label="Designation" variant="standard" fullWidth />
+          <TextField
+            label="Signature"
+            variant="standard"
+            fullWidth
+            name="Signature"
+            value={authorizedSignatory.signature}
+            onChange={(e) =>
+              handleChangeAuthorizedSignatory("signature", e.target.value)
+            }
+          />
+          <TextField
+            label="Name"
+            variant="standard"
+            fullWidth
+            name="name"
+            value={authorizedSignatory.name}
+            onChange={(e) =>
+              handleChangeAuthorizedSignatory("name", e.target.value)
+            }
+          />
+          <TextField
+            label="Designation"
+            variant="standard"
+            fullWidth
+            name="designation"
+            value={authorizedSignatory.designation}
+            onChange={(e) =>
+              handleChangeAuthorizedSignatory("designation", e.target.value)
+            }
+          />
           <TextField
             label="Date"
             type="date"
             variant="standard"
             InputLabelProps={{ shrink: true }}
             fullWidth
+            name="date"
+            value={authorizedSignatory.date}
+            onChange={(e) =>
+              handleChangeAuthorizedSignatory("date", e.target.value)
+            }
           />
         </Grid>
 
@@ -149,15 +187,39 @@ export default function Page4() {
           <Typography variant="subtitle1" color="secondary">
             1 Witness
           </Typography>
-          <TextField label="Signature" variant="standard" fullWidth />
-          <TextField label="Name" variant="standard" fullWidth />
-          <TextField label="Designation" variant="standard" fullWidth />
+          <TextField
+            label="Signature"
+            variant="standard"
+            fullWidth
+            name="signature"
+            value={witness.signature}
+            onChange={(e) => handleChangeWitness("signature", e.target.value)}
+          />
+          <TextField
+            label="Name"
+            variant="standard"
+            fullWidth
+            name="name"
+            value={witness.name}
+            onChange={(e) => handleChangeWitness("name", e.target.value)}
+          />
+          <TextField
+            label="Designation"
+            variant="standard"
+            fullWidth
+            value={witness.signature}
+            name="designation"
+            onChange={(e) => handleChangeWitness("designation", e.target.value)}
+          />
           <TextField
             label="Date"
             type="date"
             variant="standard"
             InputLabelProps={{ shrink: true }}
             fullWidth
+            name="date"
+            value={witness.date}
+            onChange={(e) => handleChangeWitness("date", e.target.value)}
           />
         </Grid>
       </Grid>
