@@ -115,12 +115,9 @@ function Page2({
                 variant="standard"
                 fullWidth
                 name="addressLine1"
-                value={Referee2.residentialAddress.addressLine1}
+                value={Referee2.addressLine1}
                 onChange={(e) =>
-                  handleChangeReferee2(
-                    "residentialAddress.addressLine1",
-                    e.target.value
-                  )
+                  handleChangeReferee2("addressLine1", e.target.value)
                 }
               />
             </Grid>
@@ -130,7 +127,7 @@ function Page2({
                 variant="standard"
                 fullWidth
                 name="addressLine2"
-                value={Referee2.residentialAddress.addressLine2}
+                value={Referee2.addressLine2}
                 onChange={(e) =>
                   handleChangeReferee2(
                     "residentialAddress.addressLine2",
@@ -145,7 +142,7 @@ function Page2({
                 variant="standard"
                 fullWidth
                 name="addressLine2"
-                value={Referee2.residentialAddress.nameOfCommunity}
+                value={Referee2.nameOfCommunity}
                 onChange={(e) =>
                   handleChangeReferee2(
                     "residentialAddress.nameOfCommunity",
@@ -160,7 +157,7 @@ function Page2({
                 variant="standard"
                 fullWidth
                 name="Nearestlandmark"
-                value={Referee2.residentialAddress.nearestLandmark}
+                value={Referee2.nearestLandmark}
                 onChange={(e) =>
                   handleChangeReferee2(
                     "residentialAddress.nearestLandmark",
@@ -175,7 +172,7 @@ function Page2({
                 variant="standard"
                 fullWidth
                 name="city"
-                value={Referee2.residentialAddress.city}
+                value={Referee2.city}
                 onChange={(e) =>
                   handleChangeReferee2(
                     "residentialAddress.city",
@@ -192,7 +189,7 @@ function Page2({
                 name="livingAtAddressSince"
                 InputLabelProps={{ shrink: true }}
                 fullWidth
-                value={Referee2.residentialAddress.livingAtAddressSince}
+                value={Referee2.livingAtAddressSince}
                 onChange={(e) =>
                   handleChangeReferee2(
                     "residentialAddress.livingAtAddressSince",
@@ -220,12 +217,9 @@ function Page2({
             row
             aria-label="employmentType"
             name="employmentType"
-            value={financialInformation.rentMortgagePayment}
+            value={employeeDetails.employmentType}
             onChange={(e) =>
-              handleChangeEmploymentDetails(
-                "rentMortgagePayment",
-                e.target.value
-              )
+              handleChangeEmploymentDetails("employmentType", e.target.value)
             }
           >
             <FormControlLabel
@@ -281,9 +275,9 @@ function Page2({
             variant="standard"
             fullWidth
             name="employerName"
-            value={employeeDetails.employer.name}
+            value={employeeDetails.name}
             onChange={(e) =>
-              handleChangeEmploymentDetails("employer.name", e.target.value)
+              handleChangeEmploymentDetails("name", e.target.value)
             }
           />
         </Grid>
@@ -293,12 +287,9 @@ function Page2({
             variant="standard"
             fullWidth
             name="industrySector"
-            value={employeeDetails.employer.industrySector}
+            value={employeeDetails.industrySector}
             onChange={(e) =>
-              handleChangeEmploymentDetails(
-                "employer.industrySector",
-                e.target.value
-              )
+              handleChangeEmploymentDetails("industrySector", e.target.value)
             }
           />
         </Grid>
@@ -308,9 +299,9 @@ function Page2({
             variant="standard"
             fullWidth
             name="address"
-            value={employeeDetails.employer.address}
+            value={employeeDetails.address}
             onChange={(e) =>
-              handleChangeEmploymentDetails("employer.address", e.target.value)
+              handleChangeEmploymentDetails("address", e.target.value)
             }
           />
         </Grid>
@@ -321,12 +312,9 @@ function Page2({
             type="number"
             fullWidth
             name="employerTelephone"
-            value={employeeDetails.employer.telephone}
+            value={employeeDetails.telephone}
             onChange={(e) =>
-              handleChangeEmploymentDetails(
-                "employer.telephone",
-                e.target.value
-              )
+              handleChangeEmploymentDetails("telephone", e.target.value)
             }
           />
         </Grid>
@@ -335,9 +323,9 @@ function Page2({
             label="Town/city"
             variant="standard"
             fullWidth
-            value={employeeDetails.employer.townCity}
+            value={employeeDetails.townCity}
             onChange={(e) =>
-              handleChangeEmploymentDetails("employer.townCity", e.target.value)
+              handleChangeEmploymentDetails("townCity", e.target.value)
             }
           />
         </Grid>
@@ -354,12 +342,9 @@ function Page2({
             InputLabelProps={{ shrink: true }}
             fullWidth
             name="Employment date"
-            value={employeeDetails.employee.employmentDate}
+            value={employeeDetails.employmentDate}
             onChange={(e) =>
-              handleChangeEmploymentDetails(
-                "employee.employmentDate",
-                e.target.value
-              )
+              handleChangeEmploymentDetails("employmentDate", e.target.value)
             }
           />
         </Grid>
@@ -373,10 +358,10 @@ function Page2({
             fullWidth
             name="Contract expiry date
 (if applicable)"
-            value={employeeDetails.employee.contractExpiryDate}
+            value={employeeDetails.contractExpiryDate}
             onChange={(e) =>
               handleChangeEmploymentDetails(
-                "employee.contractExpiryDate",
+                "contractExpiryDate",
                 e.target.value
               )
             }
@@ -389,12 +374,9 @@ function Page2({
             variant="standard"
             fullWidth
             name="SSNIT number"
-            value={employeeDetails.employee.ssnitNumber}
+            value={employeeDetails.ssnitNumber}
             onChange={(e) =>
-              handleChangeEmploymentDetails(
-                "employee.ssnitNumber",
-                e.target.value
-              )
+              handleChangeEmploymentDetails("ssnitNumber", e.target.value)
             }
           />
         </Grid>
@@ -405,12 +387,9 @@ function Page2({
             variant="standard"
             fullWidth
             name="Telephone number"
-            value={employeeDetails.employee.telephoneNumber}
+            value={employeeDetails.telephoneNumber}
             onChange={(e) =>
-              handleChangeEmploymentDetails(
-                "employee.telephoneNumber",
-                e.target.value
-              )
+              handleChangeEmploymentDetails("telephoneNumber", e.target.value)
             }
           />
         </Grid>
@@ -420,12 +399,9 @@ function Page2({
             variant="standard"
             fullWidth
             name="Highest level of education"
-            value={employeeDetails.employee.highestEducation}
+            value={employeeDetails.highestEducation}
             onChange={(e) =>
-              handleChangeEmploymentDetails(
-                "employee.highestEducation",
-                e.target.value
-              )
+              handleChangeEmploymentDetails("highestEducation", e.target.value)
             }
           />
         </Grid>
@@ -435,12 +411,9 @@ function Page2({
             variant="standard"
             fullWidth
             name="Occupation"
-            value={employeeDetails.employee.occupation}
+            value={employeeDetails.occupation}
             onChange={(e) =>
-              handleChangeEmploymentDetails(
-                "employee.occupation",
-                e.target.value
-              )
+              handleChangeEmploymentDetails("occupation", e.target.value)
             }
           />
         </Grid>
@@ -450,7 +423,7 @@ function Page2({
             variant="standard"
             fullWidth
             name="Designation"
-            value={employeeDetails.employee.designation}
+            value={employeeDetails.designation}
             onChange={(e) =>
               handleChangeEmploymentDetails(
                 "employee.designation",
@@ -466,7 +439,7 @@ function Page2({
             variant="standard"
             fullWidth
             name="Gross monthly salary"
-            value={employeeDetails.employee.grossMonthlySalary}
+            value={employeeDetails.grossMonthlySalary}
             onChange={(e) =>
               handleChangeEmploymentDetails(
                 "employee.grossMonthlySalary",
@@ -482,7 +455,7 @@ function Page2({
             variant="standard"
             fullWidth
             name="Net monthly salary"
-            value={employeeDetails.employee.netMonthlySalary}
+            value={employeeDetails.netMonthlySalary}
             onChange={(e) =>
               handleChangeEmploymentDetails(
                 "employee.netMonthlySalary",
@@ -498,7 +471,7 @@ function Page2({
             variant="standard"
             fullWidth
             name="Staff number"
-            value={employeeDetails.employee.staffNumber}
+            value={employeeDetails.staffNumber}
             onChange={(e) =>
               handleChangeEmploymentDetails(
                 "employee.staffNumber",
@@ -543,12 +516,9 @@ function Page2({
                 row
                 aria-label="accountType"
                 name="accountType"
-                value={mainAccountDetails.accountType.type}
+                value={mainAccountDetails.type}
                 onChange={(e) =>
-                  handleChangeMainAccountDetails(
-                    "accountType.type",
-                    e.target.value
-                  )
+                  handleChangeMainAccountDetails("type", e.target.value)
                 }
               >
                 <FormControlLabel
@@ -574,10 +544,10 @@ function Page2({
                 variant="standard"
                 fullWidth
                 name="pleaseSpecify"
-                value={mainAccountDetails.accountType.pleaseSpecify}
+                value={mainAccountDetails.pleaseSpecify}
                 onChange={(e) =>
                   handleChangeMainAccountDetails(
-                    "accountType.pleaseSpecify",
+                    "pleaseSpecify",
                     e.target.value
                   )
                 }
@@ -611,17 +581,27 @@ function Page2({
               <RadioGroup
                 row
                 aria-label="SalaryAccount"
-                name="salaryAccount "
+                name="salaryAccount"
                 value={mainAccountDetails.salaryAccount}
                 onChange={(e) =>
                   handleChangeMainAccountDetails(
-                    " salaryAccount",
+                    "salaryAccount",
                     e.target.value
                   )
                 }
               >
-                <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
-                <FormControlLabel value="No" control={<Radio />} label="No" />
+                <FormControlLabel
+                  value="Yes"
+                  control={<Radio />}
+                  label="Yes"
+                  name="Yes"
+                />
+                <FormControlLabel
+                  value="No"
+                  control={<Radio />}
+                  label="No"
+                  name="No"
+                />
               </RadioGroup>
             </FormControl>
           </Grid>
@@ -831,7 +811,7 @@ function Page2({
             <RadioGroup
               row
               aria-label="insolent"
-              name="insolent"
+              name="beenDeclaredInsolent"
               value={unsecuredLoans.beenDeclaredInsolent}
               onChange={(e) =>
                 handleChangeUnsecuredLoans(
@@ -927,12 +907,9 @@ details of guarantee"
                 row
                 aria-label="loanType"
                 name="loanType"
-                value={loanApplicationsDetails.loanType.type}
+                value={loanApplicationsDetails.type}
                 onChange={(e) =>
-                  handleChangeLoanApplicationDetails(
-                    "loanType.type",
-                    e.target.value
-                  )
+                  handleChangeLoanApplicationDetails("type", e.target.value)
                 }
               >
                 <FormControlLabel
@@ -973,7 +950,7 @@ details of guarantee"
                 variant="standard"
                 fullWidth
                 name="pleaseSpecify"
-                value={loanApplicationsDetails.loanType.pleaseSpecify}
+                value={loanApplicationsDetails.pleaseSpecify}
                 onChange={(e) =>
                   handleChangeLoanApplicationDetails(
                     "loanType.pleaseSpecify",
@@ -1036,10 +1013,10 @@ details of guarantee"
                 variant="standard"
                 fullWidth
                 name="min"
-                value={loanApplicationsDetails.baseRate.min}
+                value={loanApplicationsDetails.baseRateMin}
                 onChange={(e) =>
                   handleChangeLoanApplicationDetails(
-                    "baseRate.min",
+                    "baseRateMin",
                     e.target.value
                   )
                 }
@@ -1055,10 +1032,10 @@ details of guarantee"
                 variant="standard"
                 fullWidth
                 name="max"
-                value={loanApplicationsDetails.baseRate.max}
+                value={loanApplicationsDetails.baseRateMax}
                 onChange={(e) =>
                   handleChangeLoanApplicationDetails(
-                    "baseRate.max",
+                    "baseRateMax",
                     e.target.value
                   )
                 }
@@ -1076,10 +1053,10 @@ details of guarantee"
                 variant="standard"
                 fullWidth
                 name="min"
-                value={loanApplicationsDetails.Margin.min}
+                value={loanApplicationsDetails.MarginMin}
                 onChange={(e) =>
                   handleChangeLoanApplicationDetails(
-                    "Margin.min",
+                    "MarginMin",
                     e.target.value
                   )
                 }
@@ -1095,10 +1072,10 @@ details of guarantee"
                 variant="standard"
                 fullWidth
                 name="max"
-                value={loanApplicationsDetails.Margin.max}
+                value={loanApplicationsDetails.MarginMax}
                 onChange={(e) =>
                   handleChangeLoanApplicationDetails(
-                    "Margin.max",
+                    "MarginMax",
                     e.target.value
                   )
                 }
@@ -1165,12 +1142,9 @@ details of guarantee"
                 type="number"
                 fullWidth
                 name="Months"
-                value={loanApplicationsDetails.termOfLoan.months}
+                value={loanApplicationsDetails.months}
                 onChange={(e) =>
-                  handleChangeLoanApplicationDetails(
-                    "termOfLoan.months",
-                    e.target.value
-                  )
+                  handleChangeLoanApplicationDetails("months", e.target.value)
                 }
               />
             </Grid>
@@ -1181,10 +1155,10 @@ details of guarantee"
                 type="number"
                 fullWidth
                 name="Repayment amount"
-                value={loanApplicationsDetails.termOfLoan.repaymentAmount}
+                value={loanApplicationsDetails.repaymentAmount}
                 onChange={(e) =>
                   handleChangeLoanApplicationDetails(
-                    "termOfLoan.repaymentAmount",
+                    "repaymentAmount",
                     e.target.value
                   )
                 }

@@ -20,10 +20,8 @@ const useFormStore = create((set) => ({
     nearestLandmark: "",
     city: "",
     livingAtAddressSince: "",
-    residentialStatus: {
-      type: "",
-      pleaseSpecify: "",
-    },
+    residentialType: "",
+    pleaseSpecify: "",
     postalAddress: "",
     postalTown: "",
     usingPostalAddressSince: "",
@@ -31,17 +29,13 @@ const useFormStore = create((set) => ({
   maritalStatusAndDependents: {
     maritalStatus: "single",
     howMarried: "",
-    numberOfDependants: {
-      spouse: 0,
-      children: 0,
-      other: 0,
-    },
-    spouseDetails: {
-      title: "",
-      firstName: "",
-      surname: "",
-      mobileNumber: "",
-    },
+    spouse: "",
+    children: "",
+    other: "",
+    spouseTitle: "",
+    spouseFirstName: "",
+    spouseSurname: "",
+    spouseMobileNumber: "",
   },
   referee1: {
     title: "",
@@ -50,14 +44,13 @@ const useFormStore = create((set) => ({
     relationship: "",
     mobileNumber: "",
     dateOfBirth: "",
-    residentialAddress: {
-      addressLine1: "",
-      addressLine2: "",
-      nameOfCommunity: "",
-      nearestLandmark: "",
-      city: "",
-      livingAtAddressSince: "",
-    },
+
+    addressLine1: "",
+    addressLine2: "",
+    nameOfCommunity: "",
+    nearestLandmark: "",
+    city: "",
+    livingAtAddressSince: "",
   },
   referee2: {
     title: "",
@@ -66,43 +59,40 @@ const useFormStore = create((set) => ({
     relationship: "",
     mobileNumber: "",
     dateOfBirth: "",
-    residentialAddress: {
-      addressLine1: "",
-      addressLine2: "",
-      nameOfCommunity: "",
-      nearestLandmark: "",
-      city: "",
-      livingAtAddressSince: "",
-    },
+
+    addressLine1: "",
+    addressLine2: "",
+    nameOfCommunity: "",
+    nearestLandmark: "",
+    city: "",
+    livingAtAddressSince: "",
   },
   employmentDetails: {
     employmentType: "",
-    employer: {
-      name: "",
-      industrySector: "",
-      address: "",
-      telephone: "",
-      townCity: "",
-    },
-    employee: {
-      employmentDate: "",
-      contractExpiryDate: "",
-      ssnitNumber: "",
-      telephoneNumber: "",
-      highestEducation: "",
-      occupation: "",
-      designation: "",
-      grossMonthlySalary: "",
-      netMonthlySalary: "",
-      staffNumber: "",
-    },
+
+    name: "",
+    industrySector: "",
+    address: "",
+    telephone: "",
+    townCity: "",
+
+    employmentDate: "",
+    contractExpiryDate: "",
+    ssnitNumber: "",
+    telephoneNumber: "",
+    highestEducation: "",
+    occupation: "",
+    designation: "",
+    grossMonthlySalary: "",
+    netMonthlySalary: "",
+    staffNumber: "",
+
     previousEmployer: "",
   },
   mainAccountDetails: {
-    accountType: {
-      type: "",
-      pleaseSpecify: "",
-    },
+    type: "",
+    pleaseSpecify: "",
+
     heldInTheNameOf: "",
     salaryAccount: "",
     bankOrFinancialInstitution: "",
@@ -127,25 +117,24 @@ const useFormStore = create((set) => ({
   },
   loanApplicationsDetails: {
     amount: "",
-    loanType: {
-      type: "",
-      pleaseSSpecify: "",
-    },
+
+    type: "",
+    pleaseSSpecify: "",
+
     interestRate: "",
     score: "",
-    baseRate: {
-      min: "",
-      max: "",
-    },
-    Margin: {
-      min: "",
-      max: "",
-    },
+
+    baseRateMin: "",
+    baseRateMax: "",
+
+    MarginMin: "",
+    MarginMax: "",
+
     repaymentMethod: "",
-    termOfLoan: {
-      months: "",
-      repaymentAmount: "",
-    },
+
+    months: "",
+    repaymentAmount: "",
+
     loanProtectionCover: "",
     acceptLesserOffer: "",
     minAmount: "",
@@ -261,7 +250,7 @@ const useFormStore = create((set) => ({
     })),
   handleChangeUnsecuredLoans: (name, value) =>
     set((state) => ({
-      UnsecuredLoans: {
+      unsecuredLoans: {
         ...state.unsecuredLoans,
         [name]: value,
       },
@@ -297,8 +286,8 @@ const useFormStore = create((set) => ({
     })),
   handleChangeReferee2: (name, value) =>
     set((state) => ({
-      referee1: {
-        ...state.referee1,
+      referee2: {
+        ...state.referee2,
         [name]: value,
       },
     })),

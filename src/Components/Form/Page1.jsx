@@ -304,10 +304,10 @@ function Page1({
                   row
                   aria-label="residentialType"
                   name="residentialType"
-                  value={currentResidentialAddress.residentialStatus.type}
+                  value={currentResidentialAddress.residentialType}
                   onChange={(e) =>
                     handleChangeResidentialAddress(
-                      "residentialStatus.type",
+                      "residentialType",
                       e.target.value
                     )
                   }
@@ -350,12 +350,10 @@ function Page1({
                   variant="standard"
                   fullWidth
                   name="pleaseSpecify"
-                  value={
-                    currentResidentialAddress.residentialStatus.pleaseSpecify
-                  }
+                  value={currentResidentialAddress.pleaseSpecify}
                   onChange={(e) =>
                     handleChangeResidentialAddress(
-                      "residentialStatus.pleaseSpecify",
+                      "pleaseSpecify",
                       e.target.value
                     )
                   }
@@ -491,7 +489,7 @@ function Page1({
         </Grid>
         <Grid item xs={12}>
           <Typography variant="caption" gutterBottom>
-            Number of dependants
+            Number of dependents
           </Typography>
           <Grid container spacing={2}>
             <Grid item xs={3}>
@@ -501,7 +499,7 @@ function Page1({
                 type="number"
                 fullWidth
                 name="Spouse"
-                value={MaritalStatus.numberOfDependants.spouse}
+                value={MaritalStatus.spouse}
                 onChange={(e) =>
                   handleChangeMaritalStatus(
                     "numberOfDependants.spouse",
@@ -517,7 +515,7 @@ function Page1({
                 type="number"
                 fullWidth
                 name="Children"
-                value={MaritalStatus.numberOfDependants.children}
+                value={MaritalStatus.children}
                 onChange={(e) =>
                   handleChangeMaritalStatus(
                     "numberOfDependants.children",
@@ -533,7 +531,7 @@ function Page1({
                 type="number"
                 fullWidth
                 name="Other"
-                value={MaritalStatus.numberOfDependants.other}
+                value={MaritalStatus.other}
                 onChange={(e) =>
                   handleChangeMaritalStatus(
                     "numberOfDependants.other",
@@ -554,13 +552,10 @@ function Page1({
                 label="Title"
                 variant="standard"
                 fullWidth
-                name="title"
-                value={MaritalStatus.spouseDetails.title}
+                name="spouseTitle"
+                value={MaritalStatus.spouseTitle}
                 onChange={(e) =>
-                  handleChangeMaritalStatus(
-                    "spouseDetails.title",
-                    e.target.value
-                  )
+                  handleChangeMaritalStatus("spouseTitle", e.target.value)
                 }
               />
             </Grid>
@@ -570,12 +565,9 @@ function Page1({
                 variant="standard"
                 fullWidth
                 name="FirstName"
-                value={MaritalStatus.spouseDetails.firstName}
+                value={MaritalStatus.spouseFirstName}
                 onChange={(e) =>
-                  handleChangeMaritalStatus(
-                    "spouseDetails.firstName",
-                    e.target.value
-                  )
+                  handleChangeMaritalStatus("spouseFirstName", e.target.value)
                 }
               />
             </Grid>
@@ -584,13 +576,10 @@ function Page1({
                 label="Surname"
                 variant="standard"
                 fullWidth
-                name="Surname"
-                value={MaritalStatus.spouseDetails.surname}
+                name="spouseSurname"
+                value={MaritalStatus.spouseSurname}
                 onChange={(e) =>
-                  handleChangeMaritalStatus(
-                    "spouseDetails.surname",
-                    e.target.value
-                  )
+                  handleChangeMaritalStatus("spouseSurname", e.target.value)
                 }
               />
             </Grid>
@@ -599,11 +588,11 @@ function Page1({
                 label="Mobile number"
                 variant="standard"
                 fullWidth
-                name="mobile number"
-                value={MaritalStatus.spouseDetails.mobileNumber}
+                name="spouseMobileNumber"
+                value={MaritalStatus.spouseMobileNumber}
                 onChange={(e) =>
                   handleChangeMaritalStatus(
-                    "spouseDetails.mobileNumber",
+                    "spouseMobileNumber",
                     e.target.value
                   )
                 }
@@ -702,12 +691,9 @@ function Page1({
                 variant="standard"
                 fullWidth
                 name="addressLine1"
-                value={Referee1.residentialAddress.addressLine1}
+                value={Referee1.addressLine1}
                 onChange={(e) =>
-                  handleChangeReferee1(
-                    "residentialAddress.addressLine1",
-                    e.target.value
-                  )
+                  handleChangeReferee1("addressLine1", e.target.value)
                 }
               />
             </Grid>
@@ -717,12 +703,9 @@ function Page1({
                 variant="standard"
                 fullWidth
                 name="addressLine2"
-                value={Referee1.residentialAddress.addressLine2}
+                value={Referee1.addressLine2}
                 onChange={(e) =>
-                  handleChangeReferee1(
-                    "residentialAddress.addressLine2",
-                    e.target.value
-                  )
+                  handleChangeReferee1("addressLine2", e.target.value)
                 }
               />
             </Grid>
@@ -732,12 +715,9 @@ function Page1({
                 variant="standard"
                 fullWidth
                 name="nameOfCommunity"
-                value={Referee1.residentialAddress.nameOfCommunity}
+                value={Referee1.nameOfCommunity}
                 onChange={(e) =>
-                  handleChangeReferee1(
-                    "residentialAddress.nameOfCommunity",
-                    e.target.value
-                  )
+                  handleChangeReferee1("nameOfCommunity", e.target.value)
                 }
               />
             </Grid>
@@ -747,12 +727,9 @@ function Page1({
                 variant="standard"
                 fullWidth
                 name="Nearestlandmark"
-                value={Referee1.residentialAddress.nearestLandmark}
+                value={Referee1.nearestLandmark}
                 onChange={(e) =>
-                  handleChangeReferee1(
-                    "residentialAddress.nearestLandmark",
-                    e.target.value
-                  )
+                  handleChangeReferee1("nearestLandmark", e.target.value)
                 }
               />
             </Grid>
@@ -762,13 +739,8 @@ function Page1({
                 variant="standard"
                 fullWidth
                 name="city"
-                value={Referee1.residentialAddress.city}
-                onChange={(e) =>
-                  handleChangeReferee1(
-                    "residentialAddress.city",
-                    e.target.value
-                  )
-                }
+                value={Referee1.city}
+                onChange={(e) => handleChangeReferee1("city", e.target.value)}
               />
             </Grid>
             <Grid item xs={4}>
@@ -779,12 +751,9 @@ function Page1({
                 InputLabelProps={{ shrink: true }}
                 fullWidth
                 name="livingAtAddressSince"
-                value={Referee1.residentialAddress.livingAtAddressSince}
+                value={Referee1.livingAtAddressSince}
                 onChange={(e) =>
-                  handleChangeReferee1(
-                    "residentialAddress.livingAtAddressSince",
-                    e.target.value
-                  )
+                  handleChangeReferee1("livingAtAddressSince", e.target.value)
                 }
               />
             </Grid>

@@ -58,7 +58,7 @@ const Apply = () => {
     handleChangeMaritalStatus,
     handleChangeReferee1,
     handleChangeReferee2,
-    handleChangeEmploymentDetail,
+    handleChangeEmploymentDetails,
     handleChangeMainAccountDetails,
     unsecuredLoans,
     handleChangeUnsecuredLoans,
@@ -137,7 +137,7 @@ const Apply = () => {
                   Referee2={referee2}
                   handleChangeReferee2={handleChangeReferee2}
                   employeeDetails={employmentDetails}
-                  handleChangeEmploymentDetail={handleChangeEmploymentDetail}
+                  handleChangeEmploymentDetails={handleChangeEmploymentDetails}
                   handleChangeMainAccountDetails={
                     handleChangeMainAccountDetails
                   }
