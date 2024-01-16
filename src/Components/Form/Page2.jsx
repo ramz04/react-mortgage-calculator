@@ -1004,7 +1004,7 @@ details of guarantee"
           />
         </Grid>
         <Grid item xs={3}>
-          <Grid container spacing={1} alignItems="center">
+          <Grid container spacing={1}>
             <Typography variant="subtitle1" gutterBottom>
               Base rate
             </Typography>
@@ -1023,9 +1023,7 @@ details of guarantee"
               />
             </Grid>
             <Grid item xs={1}>
-              <Typography variant="h6" align="center">
-                -
-              </Typography>
+              <Typography variant="h6">-</Typography>
             </Grid>
             <Grid item xs={2}>
               <TextField
@@ -1044,7 +1042,7 @@ details of guarantee"
           </Grid>
         </Grid>
         <Grid item xs={3}>
-          <Grid container spacing={1} alignItems="center">
+          <Grid container spacing={1}>
             <Typography variant="subtitle1" gutterBottom>
               Margin
             </Typography>
@@ -1063,9 +1061,7 @@ details of guarantee"
               />
             </Grid>
             <Grid item xs={1}>
-              <Typography variant="h6" align="center">
-                -
-              </Typography>
+              <Typography variant="h6">-</Typography>
             </Grid>
             <Grid item xs={2}>
               <TextField
@@ -1131,10 +1127,8 @@ details of guarantee"
           </FormControl>
         </Grid>
         <Grid item xs={12}>
-          <Grid container spacing={2} alignItems="center">
-            <Typography variant="h6" align="center">
-              Term of loan
-            </Typography>
+          <Grid container spacing={2}>
+            <Typography variant="h6">Term of loan</Typography>
             <Grid item xs={3}>
               <TextField
                 label="Months"
@@ -1167,11 +1161,7 @@ details of guarantee"
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <FormControl
-            component="fieldset"
-            style={{ marginTop: "5px" }}
-            alignItems="center"
-          >
+          <FormControl component="fieldset" style={{ marginTop: "5px" }}>
             <FormLabel component="legend">Loan protection cover</FormLabel>
             <RadioGroup
               row
@@ -1193,11 +1183,7 @@ details of guarantee"
         <Grid item xs={12}>
           <Grid container spacing={2}>
             <Grid item xs={4}>
-              <FormControl
-                component="fieldset"
-                style={{ marginTop: "5px" }}
-                alignItems="center"
-              >
+              <FormControl component="fieldset" style={{ marginTop: "5px" }}>
                 <FormLabel component="legend">Accept lesser offer</FormLabel>
                 <RadioGroup
                   row

@@ -1,4 +1,6 @@
 import Navbar from "./Components/Navbar"
+
+import { useNavigate } from "react-router-dom"
 import useThemeStore from "./context"
 import { ThemeProvider } from "@mui/material/styles"
 import CssBaseline from "@mui/material/CssBaseline"
@@ -32,6 +34,7 @@ const MyPaper = styled(Paper)({
 })
 
 const Apply = () => {
+  const navigate = useNavigate()
   const { darkMode, toggleDarkMode } = useThemeStore()
 
   const { currentIndex, goBackwards, goForwards, isFirstStep, isLastStep } =
@@ -83,26 +86,31 @@ const Apply = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     // Add logic to submit the form data (e.g., send to server)
-    console.log("Form data submitted:", {
-      personalInformation,
-      currentResidentialAddress,
-      maritalStatusAndDependents,
-      referee1,
-      referee2,
-      unsecuredLoans,
-      employmentDetails,
-      mainAccountDetails,
-      financialInformation,
-      loanApplicationsDetails,
-      acceptanceOfTermsAndCondition,
-      witness,
-      authorizedSignatory,
-      employerEndorsement,
-      customerDeclarationsAndAcceptance,
-      debitAuthorization,
-      loanProtectionBenefit,
-    })
-    goForwards()
+    if (!isLastStep) {
+      goForwards()
+    } else {
+      navigate("/confirmation")
+
+      console.log("Form data submitted:", {
+        personalInformation,
+        currentResidentialAddress,
+        maritalStatusAndDependents,
+        referee1,
+        referee2,
+        unsecuredLoans,
+        employmentDetails,
+        mainAccountDetails,
+        financialInformation,
+        loanApplicationsDetails,
+        acceptanceOfTermsAndCondition,
+        witness,
+        authorizedSignatory,
+        employerEndorsement,
+        customerDeclarationsAndAcceptance,
+        debitAuthorization,
+        loanProtectionBenefit,
+      })
+    }
   }
 
   return (

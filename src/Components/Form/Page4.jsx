@@ -207,7 +207,7 @@ export default function Page4({
             label="Designation"
             variant="standard"
             fullWidth
-            value={witness.signature}
+            value={witness.designation}
             name="designation"
             onChange={(e) => handleChangeWitness("designation", e.target.value)}
           />

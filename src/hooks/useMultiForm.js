@@ -10,7 +10,9 @@ const useMultiForm = (formSteps) => {
 
   const goForwards = () => {
     if (currentIndex === formSteps - 1) return
+
     setCurrentIndex((prev) => prev + 1)
+    window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
   // go to section
