@@ -88,23 +88,23 @@ const Apply = () => {
     e.preventDefault()
 
     const formData = {
-      personalInformation,
-      currentResidentialAddress,
-      maritalStatusAndDependents,
-      referee1,
-      referee2,
-      employmentDetails,
-      mainAccountDetails,
-      financialInformation,
-      unsecuredLoans,
-      loanApplicationsDetails,
-      loanProtectionBenefit,
-      debitAuthorization,
-      customerDeclarationsAndAcceptance,
-      employerEndorsement,
-      authorizedSignatory,
-      witness,
-      acceptanceOfTermsAndCondition,
+      ...personalInformation,
+      ...currentResidentialAddress,
+      ...maritalStatusAndDependents,
+      ...referee1,
+      ...referee2,
+      ...employmentDetails,
+      ...mainAccountDetails,
+      ...financialInformation,
+      ...unsecuredLoans,
+      ...loanApplicationsDetails,
+      ...loanProtectionBenefit,
+      ...debitAuthorization,
+      ...customerDeclarationsAndAcceptance,
+      ...employerEndorsement,
+      ...authorizedSignatory,
+      ...witness,
+      ...acceptanceOfTermsAndCondition,
     }
     // Add logic to submit the form data (e.g., send to server)
     if (!isLastStep) {
@@ -112,7 +112,16 @@ const Apply = () => {
     } else {
       navigate("/confirmation")
       try {
-        const response = await axios.post("http://localhost:3000", formData)
+        const response = await axios.post(
+          "http://localhost:3000/loan",
+          formData,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        console.log("Form Data to be submitted:", formData)
         console.log("Server response:", response.data)
         // Handle success, e.g., show a success message or redirect the user
       } catch (error) {
