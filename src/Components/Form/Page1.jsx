@@ -34,6 +34,7 @@ function Page1({
             variant="standard"
             fullWidth
             name="title"
+            required
             value={personalInformation.title}
             onChange={(e) =>
               handleChangePersonalInformation("title", e.target.value)
@@ -45,6 +46,7 @@ function Page1({
             label="First name"
             variant="standard"
             fullWidth
+            required
             name="firstName"
             value={personalInformation.firstName}
             onChange={(e) =>
@@ -57,6 +59,7 @@ function Page1({
             label="Surname"
             variant="standard"
             fullWidth
+            required
             name="surName"
             value={personalInformation.surName}
             onChange={(e) =>
@@ -70,6 +73,7 @@ function Page1({
             type="date"
             variant="standard"
             InputLabelProps={{ shrink: true }}
+            required
             fullWidth
             name="dateOfBirth"
             value={personalInformation.dateOfBirth}
@@ -84,6 +88,7 @@ function Page1({
             <RadioGroup
               row
               aria-label="gender"
+              required
               name="gender"
               value={personalInformation.gender}
               onChange={(e) =>
@@ -110,6 +115,7 @@ function Page1({
                   row
                   aria-label="identificationType"
                   name="identificationType"
+                  required
                   value={personalInformation.identificationType}
                   onChange={(e) =>
                     handleChangePersonalInformation(
@@ -150,6 +156,7 @@ function Page1({
                   label="ID number"
                   variant="standard"
                   fullWidth
+                  required
                   name="idNumber"
                   value={personalInformation.idNumber}
                   onChange={(e) =>
@@ -171,6 +178,7 @@ function Page1({
                 label="Telephone(Home)"
                 variant="standard"
                 fullWidth
+                required
                 name="teleHome"
                 value={personalInformation.teleHome}
                 onChange={(e) =>
@@ -220,6 +228,7 @@ function Page1({
           <TextField
             label="House Number"
             variant="standard"
+            required
             fullWidth
             name="addressLine1"
             value={currentResidentialAddress.addressLine1}
@@ -232,6 +241,7 @@ function Page1({
           <TextField
             label="Street name"
             variant="standard"
+            required
             fullWidth
             name="addressLine2"
             value={currentResidentialAddress.addressLine2}
@@ -244,6 +254,7 @@ function Page1({
           <TextField
             label="Name of community"
             variant="standard"
+            required
             fullWidth
             name="nameOfCommunity"
             value={currentResidentialAddress.nameOfCommunity}
@@ -256,6 +267,7 @@ function Page1({
           <TextField
             label="Nearest landmark"
             variant="standard"
+            required
             fullWidth
             name="NearestLandmark"
             value={currentResidentialAddress.nearestLandmark}
@@ -268,6 +280,7 @@ function Page1({
           <TextField
             label="Town/city"
             variant="standard"
+            required
             fullWidth
             name="city"
             value={currentResidentialAddress.city}
@@ -281,6 +294,7 @@ function Page1({
             label="Living at address since"
             variant="standard"
             type="date"
+            required
             InputLabelProps={{ shrink: true }}
             fullWidth
             name="livingAtAddressSince"
@@ -303,6 +317,7 @@ function Page1({
                 <RadioGroup
                   row
                   aria-label="residentialType"
+                  required
                   name="residentialType"
                   value={currentResidentialAddress.residentialType}
                   onChange={(e) =>
@@ -366,6 +381,7 @@ function Page1({
           <TextField
             label="Postal address"
             variant="standard"
+            required
             fullWidth
             name="postalAddress"
             value={currentResidentialAddress.postalAddress}
@@ -379,6 +395,7 @@ function Page1({
             label=" Postal Town"
             variant="standard"
             fullWidth
+            required
             name="postalTown"
             value={currentResidentialAddress.postalTown}
             onChange={(e) =>
@@ -392,6 +409,7 @@ function Page1({
             variant="standard"
             type="date"
             InputLabelProps={{ shrink: true }}
+            required
             fullWidth
             name="usingPostalAddressSince"
             value={currentResidentialAddress.usingPostalAddressSince}
@@ -421,6 +439,7 @@ function Page1({
               row
               aria-label="maritalStatus"
               name="maritalStatus"
+              required
               value={MaritalStatus.maritalStatus}
               onChange={(e) =>
                 handleChangeMaritalStatus("maritalStatus", e.target.value)
@@ -496,6 +515,7 @@ function Page1({
               <TextField
                 label="Spouse"
                 variant="standard"
+                required
                 type="number"
                 fullWidth
                 name="Spouse"
@@ -551,6 +571,7 @@ function Page1({
               <TextField
                 label="Title"
                 variant="standard"
+                required
                 fullWidth
                 name="spouseTitle"
                 value={MaritalStatus.spouseTitle}
@@ -564,6 +585,7 @@ function Page1({
                 label="First name"
                 variant="standard"
                 fullWidth
+                required
                 name="FirstName"
                 value={MaritalStatus.spouseFirstName}
                 onChange={(e) =>
@@ -576,6 +598,7 @@ function Page1({
                 label="Surname"
                 variant="standard"
                 fullWidth
+                required
                 name="spouseSurname"
                 value={MaritalStatus.spouseSurname}
                 onChange={(e) =>
@@ -586,6 +609,7 @@ function Page1({
             <Grid item xs={12}>
               <TextField
                 label="Mobile number"
+                required
                 variant="standard"
                 fullWidth
                 name="spouseMobileNumber"
@@ -616,6 +640,7 @@ function Page1({
           <TextField
             label="Title"
             variant="standard"
+            required
             fullWidth
             name="title"
             value={Referee1.title}
@@ -625,6 +650,7 @@ function Page1({
         <Grid item xs={4}>
           <TextField
             label="First name"
+            required
             variant="standard"
             fullWidth
             name="FirstName"
@@ -637,6 +663,7 @@ function Page1({
             label="Surname"
             variant="standard"
             fullWidth
+            required
             name="Surname"
             value={Referee1.surname}
             onChange={(e) => handleChangeReferee1("surname", e.target.value)}
@@ -647,6 +674,7 @@ function Page1({
             label="Relationship"
             variant="standard"
             fullWidth
+            required
             name="Relationship"
             value={Referee1.relationship}
             onChange={(e) =>
@@ -659,6 +687,7 @@ function Page1({
             label="Mobile number"
             variant="standard"
             fullWidth
+            required
             name="Mobile number"
             value={Referee1.mobileNumber}
             onChange={(e) =>
@@ -671,6 +700,7 @@ function Page1({
             label="Date of birth"
             variant="standard"
             fullWidth
+            required
             InputLabelProps={{ shrink: true }}
             type="date"
             name="Date of birth"
@@ -688,6 +718,7 @@ function Page1({
             <Grid item xs={4}>
               <TextField
                 label="House Number"
+                required
                 variant="standard"
                 fullWidth
                 name="addressLine1"
@@ -701,6 +732,7 @@ function Page1({
               <TextField
                 label="Street name"
                 variant="standard"
+                required
                 fullWidth
                 name="addressLine2"
                 value={Referee1.addressLine2}
@@ -713,6 +745,7 @@ function Page1({
               <TextField
                 label="Name of community"
                 variant="standard"
+                required
                 fullWidth
                 name="nameOfCommunity"
                 value={Referee1.nameOfCommunity}
@@ -725,6 +758,7 @@ function Page1({
               <TextField
                 label="Nearest landmark"
                 variant="standard"
+                required
                 fullWidth
                 name="Nearestlandmark"
                 value={Referee1.nearestLandmark}
@@ -737,6 +771,7 @@ function Page1({
               <TextField
                 label="Town/city"
                 variant="standard"
+                required
                 fullWidth
                 name="city"
                 value={Referee1.city}
@@ -746,6 +781,7 @@ function Page1({
             <Grid item xs={4}>
               <TextField
                 label="Living at address since"
+                required
                 variant="standard"
                 type="date"
                 InputLabelProps={{ shrink: true }}
