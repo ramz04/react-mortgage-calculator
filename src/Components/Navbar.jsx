@@ -9,6 +9,7 @@ import Switch from "@mui/material/Switch"
 import { FormControlLabel, FormGroup } from "@mui/material"
 import { styled } from "@mui/material/styles"
 import { Link } from "react-router-dom"
+import { UserButton } from "@clerk/clerk-react"
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -81,8 +82,10 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                   inputProps={{ "aria-label": "DarkMode Theme Switcher" }}
                 />
                 <Typography>Dark</Typography>
+                <UserButton />
               </Stack>
             </FormGroup>
+
             {/* <Switch
               checked={darkMode}
               onChange={toggleDarkMode}
