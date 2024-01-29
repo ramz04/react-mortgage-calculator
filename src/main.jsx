@@ -25,6 +25,7 @@ import {
   SignedIn,
   SignedOut,
 } from "@clerk/clerk-react"
+import Admin from "./Admin/Admin.jsx"
 
 const router = createBrowserRouter([
   { path: "/sign-in", element: <SignInPage /> },
@@ -99,6 +100,7 @@ const ClerkWithRoutes = () => {
           }
         />
         <Route path="/confirmation" element={<ConfirmationPage />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </ClerkProvider>
   )
